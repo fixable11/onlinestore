@@ -1,0 +1,3 @@
+#ignore gulp npm modules
+gulp/node_modules/*
+
