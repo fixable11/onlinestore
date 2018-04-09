@@ -15,7 +15,6 @@ class Users
 	 */
 	public static function registerNewUser($email, $pwdSHA, $name = '', $phone = '', $address = '')
 	{
-
 		$email = htmlspecialchars($email);
 		$name = htmlspecialchars($name);
 		$phone = htmlspecialchars($phone);
@@ -57,7 +56,6 @@ class Users
 	 */
 	public static function checkUserEmail($email)
 	{
-
 		$query = DB::db_query("SELECT id FROM users WHERE email = :email", ['email' => $email]);
 
 		if($query) {
@@ -76,7 +74,6 @@ class Users
 	 */
 	public static function loginUser($email, $pwd)
 	{
-
 		$email = htmlspecialchars($email);
 		$pwd = crypt($pwd, 'salt');
 
@@ -110,7 +107,6 @@ class Users
 	 */
 	public static function updateUserData($name, $phone, $address, $pwd1, $pwd2, $curPwd)
 	{
-
 		$email = htmlspecialchars($_SESSION['user']['email']);
 		$name = htmlspecialchars($name);
 		$phone = htmlspecialchars($phone);
@@ -171,7 +167,6 @@ class Users
 	 */
 	public static function getCurUserOrders()
 	{
-		
 		$userId = isset($_SESSION['user']['id']) ? $_SESSION['user']['id'] : 0;
 		$rs = Orders::getOrdersWithProductsByUser($userId);
 

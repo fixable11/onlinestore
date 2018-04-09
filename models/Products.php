@@ -16,7 +16,6 @@ class Products
 	 */
 	public static function getProductsByCat($catId = 0, $page = 1)
 	{	
-
 		$catId = intval($catId);
 
 		$lim = self::SHOW_BY_DEFAULT;
@@ -44,7 +43,6 @@ class Products
 	 */
 	public static function getProductsByCatByPrice($catId = 0, $page = 1, $lowPrice, $highPrice)
 	{	
-
 		$catId = intval($catId);
 
 		$lim = self::SHOW_BY_DEFAULT;
@@ -71,7 +69,6 @@ class Products
 	 */
 	public static function getAllProducts($page = 1)
 	{
-
 		$lim = self::SHOW_BY_DEFAULT;
 		$offset = ($page - 1) * self::SHOW_BY_DEFAULT;
 
@@ -95,7 +92,6 @@ class Products
 	 */
 	public static function getAllProductsByPrice($page = 1, $lowPrice, $highPrice)
 	{
-
 		$lim = self::SHOW_BY_DEFAULT;
 		$offset = ($page - 1) * self::SHOW_BY_DEFAULT;
 
@@ -120,7 +116,6 @@ class Products
 	 */
 	public static function getMinPrice($catId)
 	{
-
 		$sql = 'SELECT products.price FROM products 
 		LEFT JOIN categories ON products.category_id = categories.id 
 		WHERE parent_id = :catId
@@ -140,7 +135,6 @@ class Products
 	 */
 	public static function getMaxPrice($catId)
 	{
-
 		$sql = 'SELECT products.price FROM products 
 		LEFT JOIN categories ON products.category_id = categories.id 
 		WHERE parent_id = :catId
@@ -160,7 +154,6 @@ class Products
 	 */
 	public static function getProductById($itemId)
 	{
-
 		$itemId = intval($itemId);
 		$query = DB::db_query('SELECT * FROM products WHERE id = :itemId', ['itemId' => $itemId]);
 
@@ -175,7 +168,6 @@ class Products
 	 */
 	public static function getProductsById($itemsId)
 	{
-
 		$itemId = intval($itemId);
 
 		$sql = 'SELECT * FROM products WHERE category_id = :itemsId';
@@ -193,7 +185,6 @@ class Products
 	 */
 	public static function getProductsFromArray($itemIds)
 	{
-
 		$strIds = implode($itemIds, ', ');
 		
 		$query = DB::db_query('SELECT * FROM products WHERE id in ('.$strIds.')');
@@ -208,7 +199,6 @@ class Products
 	 */
 	public static function getProducts()
 	{
-
 		$sql = "SELECT *
 		FROM `products`
 		ORDER BY id ASC";
@@ -227,7 +217,6 @@ class Products
 	 */
 	public static function getSubCatsByParentId($catId)
 	{
-
 		$sql = "SELECT *
 		FROM `categories`
 		WHERE parent_id = :catId";
@@ -247,7 +236,6 @@ class Products
 	 */
 	public static function getProductsByCatIds($subcatsIds, $page = 1)
 	{
-
 		$offset = ($page - 1) * self::SHOW_BY_DEFAULT;
 		$lim = self::SHOW_BY_DEFAULT;
 
@@ -284,7 +272,6 @@ class Products
 	 */
 	public static function getProductsByCatIdsByPrice($lowPrice, $highPrice, $subcatsIds, $page = 1)
 	{
-
 		$offset = ($page - 1) * self::SHOW_BY_DEFAULT;
 		$lim = self::SHOW_BY_DEFAULT;
 
@@ -318,7 +305,6 @@ class Products
 	 */
 	public static function getProductsByIds($subcatsIds, $page = 1)
 	{
-
 		$offset = ($page - 1) * self::SHOW_BY_DEFAULT;
 		$lim = self::SHOW_BY_DEFAULT;
 
@@ -351,7 +337,6 @@ class Products
 	 */
 	public static function searchByTitle($title)
 	{
-
 		$title = "%$title%";
 		$sql = 'SELECT `id`
 		FROM products
@@ -374,7 +359,6 @@ class Products
 	 */
 	public static function insertProduct($itemName, $itemPrice, $itemDesc = '', $itemCat)
 	{
-
 		$sql = "INSERT INTO products
 		SET
 		`name` = :itemName,
@@ -403,7 +387,6 @@ class Products
 	public static function updateProduct($itemId, $itemName, $itemPrice,
 		$itemStatus, $itemDesc, $itemCat, $newFileName = null)
 	{
-		
 		$set = array();
 
 		if($itemName){
@@ -496,7 +479,6 @@ class Products
 	 */
 	public static function getTotalProductsInCategory($catId)
 	{
-
 		$sql = 'SELECT COUNT(*) AS count FROM products LEFT JOIN categories ON products.category_id = categories.id WHERE parent_id = :catId AND status ="1"';
 
 		$query = DB::db_query($sql, ['catId' => $catId]);
@@ -515,7 +497,6 @@ class Products
 	 */
 	public static function getTotalProductsInCategoryByPrice($catId, $lowPrice, $highPrice)
 	{
-
 		$sql = 'SELECT COUNT(*) AS count FROM products 
 		LEFT JOIN categories ON products.category_id = categories.id 
 		WHERE parent_id = :catId 
@@ -536,7 +517,6 @@ class Products
 	 */
 	public static function getTotalProductsByCatIds($subcatsIds)
 	{
-
 		$params = array();
 		foreach($subcatsIds as $item){
 			$params[] = $item['id'];
@@ -584,7 +564,6 @@ class Products
 	 */
 	public static function getTotalProductsByIds($Ids)
 	{
-
 		$params = array();
 		foreach($Ids as $item){
 			$params[] = $item['id'];
@@ -606,7 +585,6 @@ class Products
 	 */
 	public static function getTotalProducts()
 	{
-
 		$sql = 'SELECT COUNT(*) AS count FROM products WHERE `status` = 1';
 
 		$query = DB::db_query($sql);
@@ -623,7 +601,6 @@ class Products
 	 */
 	public static function getTotalProductsByPrice($lowPrice, $highPrice)
 	{
-
 		$sql = 'SELECT COUNT(*) AS count FROM products 
 						WHERE `price` BETWEEN :lowPrice AND :highPrice 
 						AND `status` = 1';

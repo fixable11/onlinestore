@@ -12,12 +12,11 @@ class Orders{
 	 */
 	public static function makeNewOrder($fio, $phone, $address)
 	{
-
 		$userId = $_SESSION['user']['id'];
 		$comment = "id пользователя: {$userId} <br>
-								ФИО: {$fio} <br>
-								Телефон: {$phone} <br>
-								Адрес: {$address}";
+		ФИО: {$fio} <br>
+		Телефон: {$phone} <br>
+		Адрес: {$address}";
 
 		$dateCreated = date('Y.m.d H:i:s');
 		$userIp = $_SERVER['REMOTE_ADDR'];
@@ -57,7 +56,6 @@ class Orders{
 	 */
 	public static function getOrdersWithProductsByUser($userId)
 	{
-
 		$userId = intval($userId);
 
 		$sql = "SELECT * FROM orders 
@@ -86,7 +84,6 @@ class Orders{
 	 */
 	public static function getOrders()
 	{
-
 		$sql = "SELECT o.*, u.name, u.email, u.phone, u.address
 		FROM orders AS `o`
 		LEFT JOIN users AS `u` ON o.user_id = u.id
@@ -116,7 +113,6 @@ class Orders{
 	 */
 	public static function getProductsForOrder($orderId)
 	{
-
 		$sql = "SELECT *
 		FROM purchase AS pe
 		LEFT JOIN products AS ps
@@ -136,7 +132,6 @@ class Orders{
 	 */
 	public static function updateOrderStatus($itemId, $status)
 	{
-
 		$status = intval($status);
 
 		$sql = "UPDATE orders 
@@ -156,7 +151,6 @@ class Orders{
 	 */
 	public static function updateOrderDatePayment($itemId, $datePayment)
 	{
-
 		$sql = "UPDATE orders
 		SET `date_payment` = :datePayment
 		WHERE id = :itemId";

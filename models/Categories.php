@@ -11,7 +11,6 @@ class Categories
 	 */
 	public static function getChildrenForCat($catId)
 	{
-
 		$sql = "SELECT * FROM `categories` WHERE parent_id = :catId";
 		$query = DB::db_query($sql, ['catId' => $catId]);
 
@@ -26,7 +25,6 @@ class Categories
 	*/
 	public static function getAllMainCatsWithChildren()
 	{
-
 	    $query = DB::db_query("SELECT * FROM `categories` WHERE parent_id = 0");
 
 	    while($row = $query->fetch(PDO::FETCH_ASSOC)){
@@ -50,7 +48,6 @@ class Categories
 	 */
 	public static function getCatById($catId)
 	{
-
 		$catId = intval($catId);
 		$query = DB::db_query("SELECT * FROM categories WHERE id = :catId", ['catId' => $catId]);
 
@@ -65,7 +62,6 @@ class Categories
 	 */
 	public static function getIdsBySymLinks(...$symlinks)
 	{
-
 		$sql = "SELECT id
 		FROM `categories`
 		WHERE symlink IN ('";
@@ -86,7 +82,6 @@ class Categories
 	 */
 	public static function getAllMainCategories()
 	{
-
 		$sql = 'SELECT * FROM categories WHERE parent_id = 0';
 
 		$query = DB::db_query($sql);
@@ -105,7 +100,6 @@ class Categories
 	 */
 	public static function insertCat($catName, $catParentId = 0, $symlink)
 	{	
-
 		$sql = "INSERT INTO 
 		categories (`parent_id`, `name`, `symlink`)
 		VALUES (:catParentId, :catName, :symlink)";
@@ -126,7 +120,6 @@ class Categories
 	 */
 	public static function deleteCat($catId)
 	{	
-
 		$sql = "DELETE FROM
 		categories WHERE `id` = :catId 
 		LIMIT 1";
@@ -143,7 +136,6 @@ class Categories
 	 */
 	public static function getAllCategories()
 	{
-
 		$sql = 'SELECT *
 		FROM categories
 		ORDER BY parent_id ASC';
@@ -163,7 +155,6 @@ class Categories
 	 */
 	public static function updateCategoryData($itemId, $parentId = -1, $newName = '')
 	{
-
 		$set = array();
 		$param = array();
 

@@ -12,7 +12,6 @@ class Purchase
 	 */
 	public static function setPurchaseForOrder($orderId, $cart)
 	{
-
 		$sql = "INSERT INTO purchase
 		(order_id, product_id, price, amount)
 		VALUES ";
@@ -46,7 +45,6 @@ class Purchase
 	 */
 	public static function getPurchaseForOrder($orderId)
 	{
-
 		$sql = "SELECT `pe`.*, `ps`.name
 						FROM purchase as `pe` 
 						JOIN products as `ps` ON `pe`.product_id = `ps`.id
