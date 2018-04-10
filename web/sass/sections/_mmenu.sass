@@ -72,16 +72,35 @@
   justify-content: center
   align-items: center
 .mobileCartAndLogin
-  .loginBox
+  .registerBlock
+    justify-content: center
+    align-items: center
+  .loginBoxMobile
+    display: -webkit-flex
+    display: -moz-flex
+    display: -ms-flex
+    display: -o-flex
+    display: flex
+    justify-content: center
+    align-items: center
     margin-right: 0
+    padding-left: 0
     padding-right: 0
     width: 47px
+    border: 2px solid #e3e8f0
+    background-color: transparent
     height: 47px
+    outline: none
+    border-radius: 16px
+    transition: all .3s
+    &:hover
+      background-color: #343e5c
+      .loginBoxMobile__user
+        fill: #fff 
     &__user
+      fill: #343e5c
       width: 35px
       height: 35px
-      top: 3px
-      right: 3px
   .basketCart
     padding: 0
     margin-left: 10px

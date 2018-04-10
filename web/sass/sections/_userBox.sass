@@ -35,17 +35,36 @@
 		resize: none
 		font-family: 'Montserrat Regular', sans-serif
 		font-size: 14px
+	&__logout
+		background-color: #eb2525
+		width: 80px
+		border: none
+		cursor: pointer
+		position: relative
+		box-shadow: 2px 2px 2px #800
+		&:active
+			top: 2px
+			left: 2px
+			box-shadow: none
+		&:hover, &:active
+			background-color: darken(#eb2525, 4%)
 	&__save
+		position: relative
 		cursor: pointer
 		outline-color: #343e5c
 		height: 20px
 		width: 180px
-		border: 1px solid  #ededed
+		background-color: #00e2aa
+		border: none
 		color: #000
-		background-color: #e3e0e0
 		transition: background-color .2s
-		&:hover
-			background-color: darken(#e3e0e0, 3%)
+		box-shadow: 2px 2px 2px #249076
+		&:active
+			top: 2px
+			left: 2px
+			box-shadow: none
+		&:hover,&:active
+			background-color: darken(#00e2aa, 3%)
 
 .userOrderBox
 	height: 100%

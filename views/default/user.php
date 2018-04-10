@@ -36,7 +36,7 @@ endif; ?>
 						<td class="userBox__td"><input name="curPwd" type="password" class="userBox__input" value=""></td>
 					</tr>
 					<tr class="userBox__tr">
-						<td class="userBox__td">&nbsp;</td>
+						<td class="userBox__td"><button class="userBox__logout">Выйти</button></td>
 						<td class="userBox__td"><input type="button" value="Сохранить изменения" class="userBox__save"></td>
 					</tr>
 				</table>
