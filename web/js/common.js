@@ -653,6 +653,17 @@ function registerNewUser(dataObj) {
         });
         $("body").css("overflow-y", "auto");
         $('.popupRegisterBox__message').html('');
+
+        if($('.orders__autho').length != 0){
+          $('.orders__autho').hide();
+          if(!data['name']) data['name'] = ''; 
+          if(!data['phone']) data['phone'] = ''; 
+          if(!data['address']) data['address'] = ''; 
+          var $html = '<h3 class="orders__userTitle">Данные заказчика</h3><div class="orders__infoBox"><table class="orders__infoTable infoTable"><tr class="infoTable__tr"><td class="infoTable__td infoTable__td-first">ФИО</td><td class="infoTable__td infoTable__td-last"><input type="text" name="fio" class="infoTable__input infoTable__fio" value="'+data['name']+'"></td></tr><tr class="infoTable__tr"> <td class="infoTable__td infoTable__td-first">Телефон</td><td class="infoTable__td infoTable__td-last"><input type="text" name="phone" class="infoTable__input infoTable__phone" value="'+data['phone']+'"></td></tr><tr class="infoTable__tr"><td class="infoTable__td infoTable__td-first">Адрес</td><td class="infoTable__td infoTable__td-last"><textarea name="address" class="infoTable__textarea infoTable__address">'+data['address']+'</textarea></td></tr></table></div>';
+          $('.orders__totalLeft').append($html);
+          $('.orders__pay').removeClass('orders__pay-inactive');
+        }
+
       } else {
         var regBox = $('.popupRegisterBox__message');
         if(regBox.html().trim() !== '') {
@@ -700,6 +711,14 @@ function login(dataObj){
           $(el).val('');
         });
         $("body").css("overflow-y", "auto");
+
+        if($('.orders__autho').length != 0){
+          $('.orders__autho').hide();
+          var $html = '<h3 class="orders__userTitle">Данные заказчика</h3><div class="orders__infoBox"><table class="orders__infoTable infoTable"><tr class="infoTable__tr"><td class="infoTable__td infoTable__td-first">ФИО</td><td class="infoTable__td infoTable__td-last"><input type="text" name="fio" class="infoTable__input infoTable__fio" value="'+data['name']+'"></td></tr><tr class="infoTable__tr"> <td class="infoTable__td infoTable__td-first">Телефон</td><td class="infoTable__td infoTable__td-last"><input type="text" name="phone" class="infoTable__input infoTable__phone" value="'+data['phone']+'"></td></tr><tr class="infoTable__tr"><td class="infoTable__td infoTable__td-first">Адрес</td><td class="infoTable__td infoTable__td-last"><textarea name="address" class="infoTable__textarea infoTable__address">'+data['address']+'</textarea></td></tr></table></div>';
+          $('.orders__totalLeft').append($html);
+          $('.orders__pay').removeClass('orders__pay-inactive');
+        }
+
       } else {
         var regBox = $('.popupLoginBox__message');
         $('.popupLoginBox__login,.popupLoginBox__pwd').css('border-color','red');
@@ -731,7 +750,14 @@ function logout() {
         $('.userBlock').addClass('d-none');
         $('.registerBlock').removeClass('d-none');
         $('.registerBlock').addClass('d-flex');
-        
+
+        if($('.orders__totalLeft').length != 0){
+          $('.orders__userTitle').remove();
+          $('.orders__infoBox').remove();
+          $('.orders__autho').fadeIn();
+          $('.orders__pay').addClass('orders__pay-inactive');
+        }
+
       } 
     },
     error: function (request, status, error) {

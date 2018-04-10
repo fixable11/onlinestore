@@ -5535,6 +5535,10 @@ h1, h2, h3, h4, h5, h6, p {
   width: 140px;
   -webkit-transition: background-color .3s;
   transition: background-color .3s; }
+  .orders__pay-inactive {
+    background-color: grey !important; }
+    .orders__pay-inactive:hover, .orders__pay-inactive:active {
+      background-color: grey !important; }
   .orders__pay:hover, .orders__pay:active {
     background-color: #00ce9b; }
 

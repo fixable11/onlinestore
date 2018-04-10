@@ -173,6 +173,14 @@ class CartController
 	{
 		$cart = isset($_SESSION['saleCart'])  ? $_SESSION['saleCart'] : null;
 
+		if(!isset($_SESSION['user'])){
+			$resData['success'] = 0;
+			$resData['message'] = 'Прежде чем оформить заказ вам необходимо зарегистрироваться или авторизироваться!';
+
+			echo json_encode($resData);
+			return true;
+		}
+
 		if(!$cart){
 			$resData['success'] = 0;
 			$resData['message'] = 'Нет товаров для заказа';

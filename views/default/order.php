@@ -57,7 +57,11 @@
 					</div>
 					<div class="orders__totalRight">
 						<div class="orders__total">Итого: <strong class="orders__totalStr"><?=$totalPrice?> грн</strong></div>
-						<button class="orders__pay">Оформить заказ</button>
+						<? if (isset($arUser)): ?>
+							<button class="orders__pay">Оформить заказ</button>
+						<? else: ?>	
+							<button class="orders__pay orders__pay-inactive">Оформить заказ</button>
+						<? endif; ?>
 					</div>
 				</div>
 				
