@@ -1,0 +1,80 @@
+.mainFootWrap
+	width: 100%
+	background-color: #222328
+	padding-top: 40px
+	padding-bottom: 40px
+	flex: 0 0 auto
+.footerLogo
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	align-items: center
+	&__img
+		width: 108px
+		height: 29px
+		fill: #fff
+		
+.footerNav
+	&__wrap
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		flex-direction: column
+	&__title
+		color: #fff
+	&__wrap
+		margin-top: 14px
+	&__item
+		color: #fff
+		margin-top: 5px
+	&__link
+		color: #fff
+		&:hover
+			text-decoration: underline
+
+.footerPhone
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	&__wrap
+		width: 22px
+		height: 22px
+		text-align: center
+	&__icon
+		width: 16px
+		height: 16px
+		fill: #fff
+		margin-top: 4px
+	&__phone
+		margin-left: 8px
+		color: #fff
+
+.footerSocIcons
+	&__wrap
+		margin-top: 20px
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		max-width: 150px
+		justify-content: space-between
+		flex: 0 0 auto
+	&__item
+	&__link
+		display: block
+		width: 20px
+		height: 20px
+		&:hover .footerSocIcons__linkIcon
+			fill: #6d6767
+	&__linkIcon
+		transition: fill .3s
+		width: 20px
+		height: 20px
+		fill: #fff

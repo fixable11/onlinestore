@@ -1,0 +1,97 @@
+.pagination
+	
+.paginationBoxWrap
+	background-color: #fff
+	height: 90px
+	width: 100%
+	margin-top: 30px
+	position: relative
+	border-radius: 5px
+	&-mod
+		margin-bottom: 30px
+.paginationBox
+	overflow: hidden
+	&__leftArrow, &__rightArrow
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		align-items: center
+		justify-content: center
+		width: 200px
+		text-align: center
+		height: 90px
+		transition: all .3s ease-in-out
+		&:active
+			box-shadow: 0 0 4px #000
+	&__leftArrow
+		border-right: 2px solid #f0f2f7
+		border-radius: 5px 0 0 5px
+		left: 0
+		&:hover
+			box-shadow: -2px 0 10px #b9bed1
+	&__rightArrow
+		right: 0
+		border-left: 2px solid #f0f2f7
+		border-radius: 0 5px 5px 0
+		&:hover
+			box-shadow: 2px 0 10px #b9bed1
+	&__leftArrowIcon, &__rightArrowIcon
+		width: 20px
+		height: 20px
+		fill: #3a405b
+	&__items
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		justify-content: center
+		width: 100%
+		margin: 0 auto
+		height: 100%
+		align-items: center
+	&__item
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		&:first-child
+			position: absolute
+			left: 0
+		&:last-child
+			position: absolute
+			right: 0
+	&__link
+		font-family: 'Montserrat Bold', sans-serif
+		width: 36px
+		color: #3a405b
+		overflow: hidden
+		border-radius: 50%
+		text-align: center
+		line-height: 34px
+		height: 36px
+		margin-left: 10px
+		margin-right: 10px
+		display: inline-block
+		border: 2px solid #fff
+		transition: all .3s ease-in-out
+		&-active
+			//border: 2px solid #b9bed1
+			border: 2px solid #fff
+			box-shadow: 0 0 4px #000
+		&:hover
+			box-shadow: 0 0 10px #b9bed1
+		&-dots
+			font-family: 'Montserrat Bold', sans-serif
+			width: 36px
+			color: #3a405b
+			overflow: hidden
+			border-radius: 50%
+			text-align: center
+			line-height: 34px
+			height: 36px
+			display: inline-block
+			border: 2px solid #fff

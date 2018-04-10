@@ -1,0 +1,100 @@
+@import "fonts"
+@import "libs"
+@import "vars"
+@import "mixins/mixins"
+
+*
+	box-sizing: border-box
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: rgba(0,0,0,.25)
+	border-color: rgba(0,0,0,.25)
+body input:focus:required:invalid, body textarea:focus:required:invalid
+	color: #000
+
+html, body
+	min-height: 100%
+	width: 100%
+	font-size: 16px
+	margin: 0
+	padding: 0
+	height: 100%
+body
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: 'Montserrat Regular', sans-serif
+	overflow-x: hidden
+	background-color: #fff
+	opacity: 1
+	font-weight: normal
+a
+	text-decoration: none
+	color: #000
+	&:visited,&:active,&:focus,&:hover
+		text-decoration: none
+ul,li
+	list-style-type: none
+	margin: 0
+	padding: 0
+
+h1,h2,h3,h4,h5,h6,p
+	margin: 0
+	padding: 0
+
+.h-100
+	height: 100%
+.d-flex
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+
+.wrapper
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	height: 100%
+	flex-direction: column
+
+	
+@import "sections/header"
+@import "sections/sliderTop"
+@import "sections/searchAndLogin"
+@import "sections/popup"
+@import "sections/products"
+@import "sections/accordionCategories"
+@import "sections/productsSet"
+@import "sections/productsCartsAndCategories"
+@import "sections/pagination"
+@import "sections/bestSellers"
+@import "sections/customers"
+@import "sections/footer"
+
+@import "sections/search"
+
+//Templates about
+@import "sections/aboutDelivery"
+@import "sections/aboutGuarantees"
+@import "sections/aboutContacts"
+@import "sections/aboutUs"
+
+//product template
+@import "sections/product"
+
+//admin templates
+@import "sections/newCategory"
+@import "sections/changeCategory"
+@import "sections/addProduct"
+@import "sections/adminOrders"
+
+//user template 
+@import "sections/userBox"
+@import "sections/orders"
+
+@import "sections/mmenu"
+@import "media"

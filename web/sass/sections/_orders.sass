@@ -1,0 +1,151 @@
+.ordersWrap
+	padding-bottom: 20px
+.orders
+	flex: 1 0 auto
+	&__products
+		margin-top: 20px
+		border: 1px solid #00e2aa
+		border-radius: 4px 4px 0 0
+	&__productsTitleWrap
+		height: 40px
+		width: 100%
+		background-color: #00e2aa
+		border-radius: 4px 4px 0 0
+	&__productsTitle
+		line-height: 40px
+		padding-left: 15px
+		font-family: 'Montserrat Regular', sans-serif
+	&__totalBlock
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		justify-content: space-between
+		margin: 15px
+	&__totalLeft
+	&__userTitle
+		font-size: 16px
+	&__register,&__login
+		color: #636262
+		text-decoration: underline
+	&__totalRight
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		flex-direction: column
+		align-items: flex-end
+		
+	&__total
+		font-family: 'Montserrat Regular', sans-serif
+		display: block
+	&__autho
+
+		display: inline-block
+	&__totalStr
+		font-family: 'Montserrat Bold', sans-serif
+		font-size: 20px
+		padding-left: 5px
+	&__pay
+		display: block
+		cursor: pointer
+		float: right
+		height: 35px
+		border: none
+		margin-top: 10px
+		background-color: #00e2aa
+		width: 140px
+		transition: background-color .3s
+		&:hover,&:active
+			background-color: darken(#00e2aa, 4%)
+.infoTable
+	margin-top: 10px
+	border-collapse: collapse
+	&__td
+		border: 1px solid rgba(0,0,0,.2)
+		height: 60px
+		vertical-align: middle
+		padding: 10px
+	&__input
+		font-family: 'Montserrat Regular', sans-serif
+		font-size: 14px
+		border: 1px solid rgb(169, 169, 169)
+		width: 180px
+		display: inline-block
+	&__textarea
+		font-family: 'Montserrat Regular', sans-serif
+		font-size: 14px
+		vertical-align: middle
+		display: inline-block
+		width: 180px
+		height: 80px
+		//resize: none
+
+.orderItem
+	margin-top: 20px
+	margin-left: 15px
+	margin-right: 15px
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+
+	border-bottom: 1px solid #e5e5e5
+	padding-bottom: 10px
+	&__left
+		width: 65%
+		&:after
+			display: block
+			content: ''
+			clear: both
+	&__right
+		width: 35%
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		justify-content: flex-end
+	&__imgWrap
+		display: block
+		float: left
+		border: 1px solid rgba(#000, .3)
+		border-radius: 10px
+		width: 80px
+		height: 80px
+		text-align: center
+		overflow: hidden
+	&__img
+		display: inline-block
+		width: auto
+		height: 100%
+	&__title
+		display: block
+		float: left
+		margin-left: 10px
+		transition: all .3s
+		border-bottom: 1px solid transparent
+		color: #000
+		&:hover
+			border-bottom: 1px solid #000
+	&__priceBlock
+		margin-left: 20px
+		color: #636262
+	&__price
+		color: #000
+		font-family: 'Montserrat Bold', sans-serif
+	&__amountBlock
+		margin-left: 20px
+		color: #636262
+	&__amount
+		text-align: center
+		color: #636262
+	&__totalBlock
+		color: #636262
+		margin-left: 20px
+	&__total
+		color: #000
+		font-family: 'Montserrat Bold', sans-serif

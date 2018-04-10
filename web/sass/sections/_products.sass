@@ -1,0 +1,356 @@
+.productsWrap
+	min-height: 1000px
+	background-color: #e4e5e7
+	padding-bottom: 50px
+.products
+
+.customLineWrap
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	min-height: 56px
+	border-radius: 5px
+	justify-content: flex-start
+	&:after
+		clear: both
+		display: block
+		content: ''
+.customLine
+	width: 100%
+	background-color: #fff
+	&__sortBy
+		width: 200px
+		height: 56px
+		float: left
+.sortBy
+	&__title
+		line-height: 56px
+		font-family: 'Montserrat Bold', sans-serif
+		font-size: 11px
+		text-transform: uppercase
+		color: #a1a7bd
+		padding-left: 15px
+		display: inline-block
+	&__select
+		display: none
+	.select-hidden
+		display: none
+	.selectWrap
+		border-left: 1px solid #e4e5e7
+		border-right: 1px solid #e4e5e7
+		cursor: pointer
+		display: inline-block
+		float: right
+		position: relative
+		color: #343e5c
+		width: 120px
+		height: 56px
+		font-family: 'Montserrat Bold', sans-serif
+		text-transform: uppercase
+		font-size: 11px
+		line-height: 56px
+	.select-styled
+		background-color: #fff
+		position: relative
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		height: 100%
+		width: 100%
+		transition: all .4s
+		padding-left: 20px
+		transition: opacity 1s
+		opacity: 1
+		&:after
+			content: ''
+			position: absolute
+			top: 24px
+			right: 10px
+			width: 0
+			height: 0
+			border: 7px solid transparent
+			border-color: #c2c5ce transparent transparent transparent
+			transition: all .15s
+			
+		&:hover
+			background-color: #f0f2f7
+		&:active, &.active
+			opacity: .6
+			&:after
+				border-color: transparent transparent #d1d3d9  transparent
+				top: 16px
+				opacity: .8
+	.select-options
+		display: none
+		position: absolute
+		top: 100%
+		right: 0
+		z-index: 999
+		width: 100%
+		background-color: #fff
+		li
+			height: 56px
+			line-height: 56px
+			padding-left: 20px
+			transition: all .2s
+			&:hover
+				background-color: #f0f2f7
+			&[rel='hide']
+				display: none
+
+.customLine__keywords
+	width: 295px
+	float: left
+	position: relative
+.keywords
+	&__title
+		line-height: 56px
+		font-family: 'Montserrat Bold', sans-serif
+		font-size: 11px
+		text-transform: uppercase
+		color: #a1a7bd
+		margin-left: 25px
+		display: inline-block
+	&__input
+		display: inline-block
+		position: relative
+		top: 1px
+		border-radius: 16px
+		width: 160px
+		text-indent: 10px
+		font-size: 13px
+		outline: none
+		height: 30px
+		font-family: 'Montserrat Regular', sans-serif
+		border-width: 1px
+		border-color:  #e3e8f0
+		border-style: solid
+		background-color:  #f0f2f7
+		margin-left: 10px
+		&::placeholder
+			color: #b9bfd3
+		&:focus
+			box-shadow: 0 0 5px #000
+
+.customLine__price
+	position: relative
+.price
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	align-items: center
+	&__title
+		margin-left: 15px
+		line-height: 56px
+		font-family: 'Montserrat Bold', sans-serif
+		font-size: 11px
+		text-transform: uppercase
+		color: #a1a7bd
+		//margin-left: 25px
+		display: inline-block
+	&__min
+		margin-left: 10px
+		margin-right: 10px
+	&__max
+		margin-left: 10px
+	&__min,&__max
+		display: inline-block
+		position: relative
+		top: 1px
+		border-radius: 16px
+		width: 85px
+		text-indent: 10px
+		font-size: 13px
+		outline: none
+		height: 30px
+		font-family: 'Montserrat Regular', sans-serif
+		border-width: 1px
+		border-color:  #e3e8f0
+		border-style: solid
+		background-color:  #f0f2f7
+		&::placeholder
+			color: #b9bfd3
+		&:focus
+			box-shadow: 0 0 5px #000
+	&__ok
+		background-color: #e3e8f0
+		margin-left: 15px
+		outline: none
+		border: none
+		border-radius: 6px
+		box-shadow: 0 -2px #c4c6ca inset;
+		height: 24px
+		line-height: 22px
+		font-family: 'Montserrat Bold', sans-serif
+		display: inline-block
+		padding-left: 5px
+		padding-right: 5px
+		text-align: center
+		transition: background-color .15s
+		&:hover
+			background-color: darken(#e3e8f0, 4%)
+		&:active
+			box-shadow: 0 -2px darken(#e3e8f0, 6%) inset;
+			background-color: darken(#e3e8f0, 6%)
+
+
+.customLine__freeCheck
+	float: left
+	height: 56px
+	padding-right: 10px
+	padding-left: 10px
+.freeCheck
+	&__wrap
+		float: left
+		top: 0
+		width: 20px
+		height: 20px
+		top: 50%
+		margin-top: -10px
+		background-color: #c2c5ce
+		position: relative
+		border-radius: 50%
+	&__check
+		outline: none
+		visibility: hidden
+		&:checked + .freeCheck__label
+			background-color: #00e2aa
+	&__label
+		position: absolute
+		display: block
+		width: 20px
+		height: 20px
+		border-radius: 50%
+		transition: all .5s ease
+		cursor: pointer
+		left: 0
+		top: 0
+		background-color: #ccc
+		&:hover
+			background-color: #80a59c
+		&:after
+			content: ''
+			width: 10px
+			height: 6px
+			position: absolute
+			border: 2px solid #fff
+			border-top: none
+			border-right: none
+			background-color: transparent
+			left: 5px
+			top: 6px
+			transform: rotate(-45deg)
+	&__title
+		font-size: 14px
+		float: left
+		line-height: 56px
+		padding-left: 10px
+		color: #343e5c
+		font-family: 'Montserrat Regular', sans-serif
+
+.customLine__shipTo
+	float: left
+
+
+
+.productCartWrap
+	height: 380px
+	width: 100%
+	background-color: #fff
+.productCart
+	overflow: hidden
+	margin-top: 30px
+	&__imgWrap
+		height: 225px
+		overflow: hidden
+		text-align: center
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		justify-content: center
+		align-items: center
+	&__img
+		display: inline-block
+		width: auto
+		height: auto
+		max-height: 90%
+		max-width: 90%
+	&__title
+		font-family: 'Montserrat Bold', sans-serif
+		font-size: 16px
+		text-align: center
+		color: #1c1e23
+		margin-top: 15px
+	&__color
+		text-align: center
+		font-family: 'Montserrat Regular', sans-serif
+		font-size: 12px
+		text-transform: uppercase
+		color: #b8bfd3
+		margin-top: 10px
+	&__price
+		font-size: 14px
+		font-family: 'Montserrat Bold', sans-serif
+		text-align: center
+		color: #343e5c
+		margin-top: 10px
+	&__botSect
+		height: 52px
+		width: 100%
+	&__look
+		display: inline-block
+		height: 30px
+		padding-left: 10px
+		padding-right: 10px
+		float: left
+		margin-top: 10px
+		margin-left: 15px
+		background-color: #fff
+		border: 2px solid #e4e8f0
+		transition: all .5s ease
+		font-size: 14px
+		line-height: 30px
+		font-family: 'Montserrat Regular', sans-serif
+		border-radius: 8px
+		&:hover
+			background-color: #343e5c
+			color: #fff
+	&__addWrap
+		border-radius: 8px
+		display: inline-block
+		padding-left: 10px
+		padding-right: 10px
+		height: 30px
+		float: right
+		margin-top: 10px
+		margin-right: 15px
+		cursor: pointer
+		background-color: #fff
+		border: 2px solid #e4e8f0
+		transition: all .5s ease
+		outline: none
+		&-active
+			background-color: #00e2aa
+		&:hover
+			background-color: #00e2aa
+	&__addText
+		display: inline-block
+		font-size: 14px
+		line-height: 30px
+		font-family: 'Montserrat Regular', sans-serif
+		text-align: center
+	&__addBasket
+		display: inline-block
+		width: 22px
+		position: relative
+		left: -2px
+		top: 1px
+		fill: #343e5c
+		height: 22px

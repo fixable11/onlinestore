@@ -1,0 +1,263 @@
+@import "vars"
+
+/*==========  Desktop First  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px)
+	.sss
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px)
+	.footerLogo
+		justify-content: center
+	.footerNav
+		margin-top: 50px
+	.footerPhone
+		margin-top: 20px
+	.footerSocIcons__wrap
+		margin-top: 15px
+	.paginationBox__items
+		width: 220px
+	.paginationBox__leftArrow, .paginationBox__rightArrow
+		width: 120px
+	.sliderTop__item-1
+		background-size: 180px
+		background-position: 88% 0%
+	.searchAndLoginBox
+		display: none
+	.customLine
+		
+	.accordionCategories
+		display: none
+	.productsSet
+		display: none
+	.orderItem__left
+		width: 50%
+	.orderItem__right
+		width: 50%
+	.productDescr,.productAddToCart
+		margin-top: 0
+		height: 100%
+	.productDescrAndAdd
+		margin-top: 30px
+		margin-bottom: 30px
+	.orders__totalLeft
+		max-width: 70%
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px)
+	.sliderTopWrap
+		height: auto
+	.sliderTopOwl__item
+		height: auto
+	.sliderTop__item-1
+		background: none
+	.sliderTop__title
+		margin-top: 50px
+		text-align: center
+	.sliderTop__btn
+		display: block
+		margin: 30px auto 80px
+	.sliderTopOwl
+		.owl-nav
+			.owl-prev
+				left: -10px
+			.owl-next
+				right: -10px
+	.customersBox__title
+		margin-top: 30px
+	.customersBox__subtitle
+		margin-top: 15px
+	.customersBox__itemWrap
+		margin-top: 30px
+	.orderItem
+		display: block
+	.orderItem__left
+		width: 100%
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		justify-content: center
+		align-items: center
+		flex-direction: column
+	.orderItem__imgWrap
+		width: auto
+		height: 200px
+	.orderItem__title
+		float: none
+		margin-top: 15px
+		margin-left: 0
+	.orderItem__right
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		margin-top: 15px
+		justify-content: center
+		width: 100%
+	.orders__totalBlock
+		flex-direction: column
+		align-items: center
+	.orders__totalRight
+		margin-top: 20px
+		align-items: center
+		margin-bottom: 10px
+	.orders__totalLeft
+		margin-top: 5px
+	.popupBasketCart__itemAmountBox
+	.popupBasketCart__item
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		flex-direction: column
+		align-items: center
+		margin-top: 20px
+	.popupBasketCart__itemImgWrap
+		height: 150px
+		width: auto
+		margin-top: 10px
+	.popupBasketCart__itemName
+		width: 100%
+		text-align: center
+	.popupBasketCart__itemPrice
+		width: 100%
+		margin-top: 5px
+		text-align: center
+	.popupBasketCart__itemAmountBox
+		margin-top: 10px
+	.popupBasketCart__itemRealPrice
+		margin-top: 10px
+		text-align: center
+		width: 100%
+		margin-right: 0
+	.popupBasketCart__content
+		width: 100%
+		min-width: 450px
+	.popupBasketCart__buttons
+		flex-direction: column
+		align-items: center
+	.popupBasketCart__cont
+		width: 100%
+		margin-right: 0
+	.popupBasketCart__checkout
+		width: 100%
+		margin-top: 10px
+	.orderItem__priceBlock,
+	.orderItem__amountBlock,
+	.orderItem__totalBlock
+		margin-left: 0
+		text-align: center
+	.orderItem__amountBlock
+		margin-left: 10px
+		margin-right: 10px
+	.productAddToCart
+		margin-top: 30px
+	.productSlider__imgWrap
+		width: 90%
+	.productSlider__imgWrap-sync
+		width: 75px
+	.productAddToCart,.productDescr
+		height: auto
+	.orders__totalLeft
+		max-width: 100%
+		text-align: center
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 576px)
+	.hamburger__line
+		width: 30px
+		height: 3px
+	.mobileSearch .searchBox-mobile
+		height: 35px
+	.mobileCartAndLogin 
+		.loginBox
+			height: 35px
+			width: 35px
+			border-radius: 6px
+		.loginBox__user
+			width: 25px
+			height: 25px
+		.basketCart
+			height: 35px
+			width: 35px
+			border-radius: 6px
+		.basketCart__logo, .basketCart__logoImg
+			width: 25px
+			height: 25px
+		.basketCart__amountWrap
+			width: 18px
+			height: 18px
+			right: 0
+			top: 0
+		.basketCart__amount
+			line-height: 18px
+	.hamburger.is-active .hamburger__line:nth-child(1)
+  transform: translateY(8px) rotate(45deg)
+
+	.hamburger.is-active .hamburger__line:nth-child(3)
+  transform: translateY(-14px) rotate(-45deg)
+	.sliderTop__title
+		font-size: 32px
+		margin-top: 30px
+	.sliderTop__imgWrap
+		max-width: 200px
+	.customersBox__itemImgWrap
+		width: auto
+		margin-right: 20px
+	.price
+		width: 100%
+		&__title
+			margin-left: 10px
+		&__min,&__max
+			width: 70px
+	.productsCartsAndCategories__titleWrap
+		font-size: 14px
+		padding-left: 10px
+	.productsCartsAndCategories__title
+		padding-left: 5px
+		font-size: 16px
+
+	.paginationBox__leftArrow, .paginationBox__rightArrow
+		width: 60px
+	.paginationBox__link
+		margin-left: 5px
+		margin-right: 5px
+		width: 30px
+		line-height: 28px
+		height: 30px
+	.orders__totalLeft
+		width: 100%
+	.infoTable
+		width: 100%
+	.infoTable__td
+		padding: 5px
+		&-first
+			width: 30%
+			min-width: 85px
+		&-last
+			width: 70%
+	.infoTable__input,.infoTable__textarea
+		width: 100%
+	.popupBasketCart__content
+		min-width: 300px
+	.popupLoginBox__content,.popupRegisterBox__content
+		width: 100%
+		max-width: 350px
+	.popupLoginBox__login, .popupLoginBox__pwd,
+	.popupRegisterBox__login, .popupRegisterBox__pwd
+		width: 90%
+		margin-left: auto
+		margin-right: auto
+	.popupLoginBox__login
+		margin-top: 20px
+	.popupLoginBox__entrance,
+	.popupRegisterBox__register
+		width: 90%
+		margin: 20px auto
+		margin-bottom: 0
+	.popupLoginBox__messageItem,
+	.popupRegisterBox__messageItem
+		width: 90%
+		margin: 0 auto

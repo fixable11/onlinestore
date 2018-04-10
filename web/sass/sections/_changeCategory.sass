@@ -1,0 +1,137 @@
+.changeCategory
+	flex: 1 0 auto
+	&__nav
+		margin-top: 5px
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+	&__navLink
+		font-size: 14px
+		text-decoration: underline
+		margin-left: 5px
+		color: #2529e1
+	&__tableWrap
+		overflow: auto
+	&__table
+		width: 100%
+		border-collapse: collapse
+		margin-top: 30px
+		margin-bottom: 60px
+	&__tr
+
+	&__td
+		padding-left: 15px
+		padding-right: 15px
+		border: 1px solid #a9a5a5
+		vertical-align: middle
+		&-center
+			text-align: center
+		&:nth-child(1),&:nth-child(2)
+			min-width: 30px
+			width: 5%
+			vertical-align: middle
+			text-align: center
+		&:nth-child(3),&:nth-child(4)
+			width: 40%
+		&:last-child
+			width: 100px
+			width: 10%
+	&__input
+		height: 25px
+		width: 160px
+		border: 1px solid #a9a5a5
+		text-indent: 5px
+		font-family: 'Montserrat Regular', sans-serif
+		&::placeholder
+			font-family: 'Montserrat Regular', sans-serif
+			font-size: 12px
+	&__name
+		line-height: 50px
+		font-size: 14px
+	&__tableTitle
+		line-height: 50px
+		font-size: 16px
+	&__btn
+		font-size: 13px
+		margin-top: 10px
+		padding-left: 10px
+		padding-right: 10px
+		height: 30px
+		border: none
+		outline-color: #343e5c
+		font-family: 'Montserrat Regular', sans-serif
+		background-color: #00e2aa
+		cursor: pointer
+		margin-bottom: 10px
+		transition: background-color .3s
+		&:hover
+			background-color: darken(#00e2aa, 4%)
+	&__select
+		display: none
+	.select-hidden
+		display: none
+	.selectWrap
+		margin-bottom: 3px
+		min-width: 160px
+		border: 1px solid #a9a5a5
+		cursor: pointer
+		display: inline-block
+		position: relative
+		color: #343e5c
+		min-width: 170px
+		height: 25px
+		font-family: 'Montserrat Bold', sans-serif
+		text-transform: uppercase
+		font-size: 11px
+		line-height: 25px
+	.select-styled
+		background-color: #fff
+		position: relative
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		height: 100%
+		min-width: 160px
+		width: 100%
+		transition: all .4s
+		padding-right: 30px
+		padding-left: 5px
+		transition: opacity 1s
+		opacity: 1
+		&:after
+			content: ''
+			position: absolute
+			top: 9px
+			right: 10px
+			width: 0
+			height: 0
+			border: 7px solid transparent
+			border-color: #000 transparent transparent transparent
+			transition: all .15s
+		&:hover
+			background-color: #f0f2f7
+		&:active, &.active
+			&:after
+				border-color: transparent transparent #000  transparent
+				top: 1px
+				opacity: .8
+	.select-options
+		display: none
+		position: absolute
+		top: 100%
+		right: 0
+		z-index: 999
+		width: 100%
+		background-color: #fff
+		li
+			height: 30px
+			line-height: 30px
+			padding-left: 5px
+			transition: all .2s
+			&:hover
+				background-color: #f0f2f7
+			&[rel='hide']
+				display: none

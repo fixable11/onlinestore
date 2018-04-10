@@ -1,0 +1,227 @@
+.searchAndLoginBoxWrap
+	height: 70px
+	background-color: #fff
+	margin-bottom: 30px
+.searchBox
+	width: 420px
+	display: block
+	float: left
+	height: 30px
+	top: 50%
+	margin-left: 15px
+	transform: translateY(-50%)
+	position: relative
+	&-mod
+		margin-left: 0
+	&:after
+		display: block
+		content: ''
+		clear: both
+	&__search
+		border: 2px solid #e3e8f0
+		border-radius: 8px 8px 8px 8px
+		height: 100%
+		text-indent: 10px
+		width: 100%
+		outline: none
+		background-color: #f2f2f2
+		position: relative
+		font-family: 'Montserrat Regular', sans-serif
+		font-size: 16px
+		&::placeholder
+			font-family: 'Montserrat Regular', sans-serif
+	&__btn
+		cursor: pointer
+		border: 2px solid #e3e8f0
+		outline: none
+		border-radius: 0 8px 8px 0
+		border-left: none
+		width: 40px
+		height: 100%
+		position: absolute
+		right: 0
+		top: 0
+		&:active
+			border: 2px solid #babac0
+			border-left: none
+	&__btnIcon
+		width: 16px
+		height: 16px
+		fill: #343e5c
+.cartAndLoginBlock
+
+	height: 70px
+	float: right
+	//width: 430px
+.basketCart
+	padding-left: 10px
+	padding-right: 10px
+	height: 100%
+	cursor: pointer
+	overflow: hidden
+	float: left
+	line-height: 70px
+	&__logo
+		width: 18px
+		height: 16px
+		display: inline-block
+		position: relative
+		top: 4px
+	&__logoImg
+		display: block
+		width: 18px
+		height: 16px
+		fill: #343e5c
+	&__text
+		display: inline-block
+		font-weight: bold
+		text-transform: uppercase
+		font-family: 'Montserrat Regular', sans-serif
+		font-size: 11px
+		color: #343e5c
+		margin-left: 4px
+	&__amountWrap
+		margin-left: 4px
+		width: 24px
+		height: 24px
+		display: inline-block
+		border-radius: 50%
+		background-color: #e3e8f0
+		text-align: center
+	&__amount
+		color: #343e5c
+		font-size: 11px
+		font-family: 'Montserrat Regular', sans-serif
+		line-height: 24px
+.userBlock
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	justify-content: flex-end
+	align-items: center
+	float: left
+	height: 100%
+	&__logout,&__personal
+		margin-right: 20px
+		cursor: pointer
+		padding-right: 28px
+		height: 32px
+		border: 2px solid #e3e8f0
+		border-radius: 16px
+		transition: background-color .4s
+		background-color: #fff
+		outline: none
+		position: relative
+		&:hover
+			background-color: #343e5c
+		&:hover .userBlock__logoutText
+			color: #fff
+		&:hover .userBlock__logoutImg
+			fill: #fff
+	&__personal
+		margin-right: 20px
+		margin-left: 10px
+	&__logoutText
+		color: #343e5c
+		font-size: 11px
+		line-height: 28px
+		text-transform: uppercase
+		font-weight: normal
+		text-align: left
+		padding-left: 4px
+		font-family: 'Montserrat Bold', sans-serif
+		transition: color .4s
+	&__logoutImg
+		fill: #343e5c
+		right: 12px
+		top: 10px
+		width: 10px
+		height: 10px
+		position: absolute
+		transition: fill .4s
+
+.registerBlock
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	justify-content: flex-end
+	align-items: center
+	float: right
+	height: 100%
+.loginBox
+	margin-right: 20px
+	margin-left: 10px
+	cursor: pointer
+	padding-right: 28px
+	height: 32px
+	border: 2px solid #e3e8f0
+	border-radius: 16px
+	transition: background-color .4s
+	background-color: #fff
+	outline: none
+	position: relative
+	&__text
+		color: #343e5c
+		font-size: 11px
+		line-height: 28px
+		text-transform: uppercase
+		font-weight: normal
+		text-align: left
+		padding-left: 4px
+		font-family: 'Montserrat Bold', sans-serif
+		transition: color .4s
+	&__user
+		fill: #343e5c
+		right: 12px
+		top: 10px
+		width: 10px
+		height: 10px
+		position: absolute
+		transition: fill .4s
+	&:hover
+		background-color: #343e5c
+	&:hover &__text
+		color: #fff
+	&:hover &__user
+		fill: #fff
+
+.registerBox
+	cursor: pointer
+	padding-right: 28px
+	margin-right: 20px
+	height: 32px
+	border: 2px solid #e3e8f0
+	border-radius: 16px
+	transition: background-color .4s
+	background-color: #fff
+	outline: none
+	position: relative
+	&__text,
+		color: #343e5c
+		font-size: 11px
+		line-height: 28px
+		text-transform: uppercase
+		font-weight: normal
+		text-align: left
+		padding-left: 4px
+		font-family: 'Montserrat Bold', sans-serif
+		transition: color .4s
+	&__user
+		fill: #343e5c
+		right: 12px
+		top: 10px
+		width: 10px
+		height: 10px
+		position: absolute
+		transition: fill .4s
+	&:hover
+		background-color: #343e5c
+	&:hover &__text
+		color: #fff
+	&:hover &__user
+		fill: #fff
+

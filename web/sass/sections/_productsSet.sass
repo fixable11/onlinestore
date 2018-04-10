@@ -1,0 +1,151 @@
+.productsSet
+	margin-top: 30px
+	&__title
+		padding-left: 20px
+		font-family: 'Montserrat Bold', sans-serif
+		font-size: 14px
+		color: #343e5c
+		text-transform: uppercase
+		height: 50px
+		background-color: #fff
+		line-height: 50px
+		border-bottom: 1px solid #f0f2f7
+		&:first-child
+			border-radius: 5px 5px 0 0
+	&__available
+		overflow: hidden
+		height: 95px
+		background-color: #fff
+		padding-left: 20px
+		padding-right: 10px
+		border-bottom: 1px solid #f0f2f7
+	&__availableWrap
+		width: 100%
+		margin-top: 12px
+		height: 30px
+		&:after
+			clear: both
+			content: ''
+			display: block
+	&__availableLabel
+		border: 2px solid #e5e9f1
+		display: inline-block
+		float: left
+		height: 24px
+		border-radius: 50%
+		width: 24px
+		margin-top: 3px
+		position: relative
+		&:after
+			transition: opacity .4s ease
+			content: ''
+			width: 14px
+			height: 14px
+			display: block
+			border-radius: 50%
+			background-color: grey
+			position: absolute
+			left: 50%
+			margin-left: -7px
+			top: 50%
+			margin-top: -7px
+			z-index: 0
+			opacity: 0
+		&:hover:after
+			opacity: 1
+	&__availableChecked
+		transition: all .5s ease
+		width: 14px
+		height: 14px
+		display: block
+		border-radius: 50%
+		background-color: #00deea
+		position: absolute
+		left: 50%
+		margin-left: -7px
+		top: 50%
+		margin-top: -7px
+		z-index: 1
+		opacity: 0
+		transition: opacity .4s ease
+	&__availableRad
+		outline: none
+		visibility: hidden
+		&:checked ~ .productsSet__availableChecked
+			opacity: 1
+	&__availableText
+		font-family: 'Montserrat Regular', sans-serif
+		font-size: 13px
+		float: left
+		padding-left: 10px
+		line-height: 30px
+		color: #343e5c
+	&__availableAmount
+		font-family: 'Montserrat Regular', sans-serif
+		font-size: 13px
+		color: #b8bfd3
+		float: right
+		line-height: 30px
+	&__brands
+		overflow: hidden
+		background-color: #fff
+		padding-left: 20px
+		padding-right: 10px
+	&__brandsWrap
+		height: 38px
+	&__brandsLable
+		margin-top: 9px
+		cursor: pointer
+		width: 20px
+		height: 20px
+		background-color: #fff
+		border: 2px solid #e4e8f0
+		display: inline-block
+		border-radius: 4px
+		position: relative
+		transition: all .5s ease
+		float: left
+		&:after
+			content: ''
+			width: 10px
+			height: 6px
+			position: absolute
+			border: 2px solid #fff
+			border-top: none
+			border-right: none
+			background-color: transparent
+			left: 3px
+			top: 4px
+			transform: rotate(-45deg)
+		&:hover
+			background-color: #ccc
+
+	&__brandsCheck
+		visibility: hidden
+		outline: none
+		&:checked ~ .productsSet__brandsMark
+			background-color: #00e2aa
+	&__brandsMark
+		transition: all .5s ease
+		position: absolute
+		width: 16px
+		height: 16px
+		border-radius: 4px
+		left: 0
+		top: 0
+		display: block
+		background-color: transparent
+	&__brandsText
+		font-family: 'Montserrat Bold', sans-serif
+		line-height: 38px
+		font-size: 12px
+		display: inline-block
+		float: left
+		margin-left: 10px
+	&__brandsAmount
+		font-family: 'Montserrat Regular', sans-serif
+		font-size: 13px
+		color: #b8bfd3
+		float: right
+		line-height: 38px
+		float: right
