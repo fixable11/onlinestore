@@ -1,10 +1,7 @@
 <?php
 
 /**
- * AJAX registration user
- * Init session variable ($_SESSION['user'])
- * 
- * @return json массив новых данных пользователя
+ * UserController.php (/user/*)
  */
 class UserController
 {
@@ -14,7 +11,6 @@ class UserController
 	 */
 	public function checkAction()
 	{
-
 		$url = 'http://localhost:3000/user/register/';
 		$data = array('email' => 'qwe6321', 'pwd1' => '123', 'pwd2' => '123');
 
@@ -33,12 +29,10 @@ class UserController
 	/**
 	 * Метод регистрации нового пользователя
 	 *
-	 * 
 	 * @return json Массив об успехе операции регистрации
 	 */
 	public function registerAction()
 	{
-
 		$email = isset($_POST['email']) ? $_POST['email'] : null;
 		$email = trim($email);
 		$email = htmlspecialchars($email);
@@ -84,7 +78,6 @@ class UserController
 		echo json_encode($resData);
 
 		return true;
-
 	}
 
 	/**
@@ -94,7 +87,6 @@ class UserController
 	 */
 	public function logoutAction()
 	{
-
 		if(isset($_SESSION['user'])){
 			unset($_SESSION['user']);
 		//unset($_SESSION['cart']);
@@ -127,7 +119,6 @@ class UserController
 
 		if($userData['success']){
 			
-
 			$_SESSION['user'] = $userData;
 			$_SESSION['user']['displayName'] = $userData['name'] ?? $userData['email'];
 
@@ -145,7 +136,6 @@ class UserController
 
 	/**
 	 * Формирование главной страницы пользователя
-	 * 
 	 */
 	public function indexAction()
 	{
@@ -155,10 +145,8 @@ class UserController
 
 		$pageTitle = 'Страница пользователя';
 
-
 		$rsUserOrders = Users::getCurUserOrders();
 		
-
 		echo loadTemplate('header', [
 			'pageTitle' => $pageTitle,
 		]);
@@ -180,7 +168,7 @@ class UserController
 	 * @param  string $email email
 	 * @param  string $pwd1  пароль
 	 * @param  string $pwd2  повтор пароля
-	 * @return array результат
+	 * @return array 				 результат
 	 */
 	private function checkRegisterParams($email, $pwd1, $pwd2)
 	{

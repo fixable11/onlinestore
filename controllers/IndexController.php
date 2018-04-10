@@ -3,23 +3,18 @@
 /**
  * IndexController.php ('/')
  */
-
 class IndexController
 {
 
 	/**
 	 * Главная страница сайта
 	 * 
-	 * @param  string  $price фильтр цены
+	 * @param  string  $price диапазон цены
 	 * @param  integer $page  номер страницы
-	 * 
 	 */
 	public function indexAction($price = null, $page = 1)
 	{	
-		
-		
 		if($price){
-			d($price);
 			$price = explode('-', $price);
 			$lowPrice = $price[0];
 			$highPrice = $price[1];
@@ -28,8 +23,8 @@ class IndexController
 			$rsProducts = Products::getAllProducts($page);
 		}
 		
-		$minPrice = Products::getMinPrice();
-		$maxPrice = Products::getMaxPrice();
+		$minPrice = Products::getMinPrice(0);
+		$maxPrice = Products::getMaxPrice(0);
 		
 	
 		$rsCategories = Categories::getAllMainCatsWithChildren();

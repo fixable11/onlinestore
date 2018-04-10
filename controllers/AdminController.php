@@ -4,17 +4,14 @@
 /**
  * AdminController.php (/admin/*)
  */
-
 class AdminController
 {
 
 	/**
 	 * Тестовая функция генерации POST запроса
-	 * 
 	 */
 	public function checkAction()
 	{
-
 		$url = 'http://localhost:3000/admin/addproduct/';
 		$data = array('itemName' => 'newName', 'itemPrice' => '10000', 'itemCatId' => '1');
 
@@ -37,11 +34,9 @@ class AdminController
 	 * Метод формирования страницы админ панели
 	 * 
 	 * Метод позволяет добавлять и удалять категории товаров
-	 * 
 	 */
 	public function indexAction()
 	{
-
 		$pageTitle = 'Управление сайтом';
 
 		$rsCategories = Categories::getAllMainCategories();
@@ -69,14 +64,12 @@ class AdminController
 	}
 
 	/**
-	 * 
 	 * Метод добавление новой категории
 	 * 
 	 * @return json Информация об успехе
 	 */
 	public function addnewcatAction()
 	{
-
 		$catName = $_POST['newCategoryName'] ?? null;
 		$catParentId = isset($_POST['generalCatId']) ? $_POST['generalCatId'] : null;
 		$symlink = $_POST['symlink'] != "" ? $_POST['symlink'] : null;
@@ -104,18 +97,17 @@ class AdminController
 		}
 
 		echo json_encode($resData);
+
 		return true;
 	}
 
 	/**
-	 * 
 	 * Метод удаления категории
 	 * 
-	 * @return bool Остановка цикла перебора маршрутов при true
+	 * @return json Информация об успехе
 	 */
 	public function deletecatAction()
 	{
-
 		$catId = $_POST['catId'];
 		$catName = $_POST['catName'];
 
@@ -144,7 +136,6 @@ class AdminController
 	 */
 	public function categoryAction()
 	{
-
 		$rsCategories = Categories::getAllCategories();
 		$rsMainCategories = Categories::getAllMainCategories();
 
@@ -168,6 +159,7 @@ class AdminController
 		echo loadTemplate('footer', [
 
 		]);
+
 		return true;
 	}
 
@@ -180,7 +172,6 @@ class AdminController
 	 */
 	public function updatecategoryAction()
 	{
-
 		$itemId = $_POST['itemId'];
 		$parentId = $_POST['parentId'];
 		$newName = $_POST['newName'];
@@ -205,7 +196,6 @@ class AdminController
 	 */
 	public function productsAction()
 	{
-
 		$rsCategories = Categories::getAllCategories();
 		$rsProducts = Products::getProducts();
 
@@ -233,7 +223,6 @@ class AdminController
 	}
 
 	/**
-	 * 
 	 * Метод добавления нового продукта
 	 * 
 	 * @return json Информация об успехе
@@ -268,7 +257,6 @@ class AdminController
 	 */
 	public function updateproductAction()
 	{
-
 		$itemId = $_POST['itemId'];
 		$itemName = $_POST['itemName'];
 		$itemPrice = $_POST['itemPrice'];
@@ -293,14 +281,12 @@ class AdminController
 	}
 
 	/**
-	 * 
 	 * Метод загрузки изображения
 	 * 
 	 * @return json Информация об успехе
 	 */
 	public function uploadAction()
 	{
-
 		$maxSize = 2 * 1024 * 1024;
 		
 		if($_FILES['filename']['size']  > $maxSize){
@@ -350,7 +336,6 @@ class AdminController
 	 */
 	public function ordersAction()
 	{
-
 		$rsOrders = Orders::getOrders();
 
 		$pageTitle = 'Управление сайтом';
@@ -375,8 +360,13 @@ class AdminController
 		return true;
 	}
 
-	public function setorderstatusAction(){
-
+	/**
+	 * Метод смены статуса заказа пользователя
+	 * 
+	 * @return json Информация об успехе
+	 */
+	public function setorderstatusAction()
+	{
 		$itemId = $_POST['itemId'];
 		$status = $_POST['status'];
 
@@ -394,6 +384,11 @@ class AdminController
 		return true;
 	}
 
+	/**
+	 * Установка даты оплаты заказа
+	 * 
+	 * @return json Информация об успехе
+	 */
 	public function setorderdatepaymentAction()
 	{
 		$itemId = $_POST['itemId'];
@@ -412,6 +407,5 @@ class AdminController
 
 		return true;
 	}
-
 
 }

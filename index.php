@@ -10,7 +10,7 @@ if(!empty($_SESSION['products'])){
 }
  
 
-include_once 'config/config.php';
+//include_once 'config/config.php';
 include_once 'components/mainFunctions.php';
 include_once 'components/DB.php';
 

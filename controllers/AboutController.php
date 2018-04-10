@@ -4,18 +4,15 @@
 /**
  * AboutController.php (/about/*)
  */
-
 class AboutController
 {
 
 	/**
 	 * Формирование страницы доставка и оплата
-	 * 
-	 * @return bool Остановка цикла перебора маршрутов при true
 	 */
 	public function deliveryAction()
 	{
-		
+	
 		$cartCntItems = count($_SESSION['cntItems']);
 
 		$pageTitle = 'Доставка и оплата';
@@ -40,13 +37,10 @@ class AboutController
 	}
 
 	/**
-	 * Формирование страницы доставка и оплата
-	 * 
-	 * @return bool Остановка цикла перебора маршрутов при true
+	 * Формирование страницы гарантий
 	 */
 	public function guaranteesAction()
 	{
-
 		$pageTitle = 'Гарантии';
 
 		echo loadTemplate('header', [
@@ -69,13 +63,10 @@ class AboutController
 	}
 
 	/**
-	 * Формирование страницы доставка и оплата
-	 * 
-	 * @return bool Остановка цикла перебора маршрутов при true
+	 * Формирование страницы контактов
 	 */
 	public function contactsAction()
 	{
-
 		$pageTitle = 'Контакты';
 
 		echo loadTemplate('header', [
@@ -98,9 +89,11 @@ class AboutController
 
 	}
 
+	/**
+	 * Формирование страницы о нас
+	 */
 	public function usAction()
 	{
-
 		$pageTitle = 'О нас';
 
 		echo loadTemplate('header', [
@@ -120,7 +113,6 @@ class AboutController
 		]);
 
 		return true;
-
 	}
 
 }

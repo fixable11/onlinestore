@@ -3,7 +3,6 @@
 /**
  * CartController.php (/cart/*)
  */
-
 class CartController
 {
 
@@ -11,14 +10,10 @@ class CartController
 	 * Метод добавления товаров в корзину
 	 *
 	 * @param integer $itemId Id продукта, который нужно добавить в корзину
-	 *
-	 * 
-	 * @return json Массив об успехе операции добавления
+	 * @return json 					Массив об успехе операции добавления
 	 */
-
 	public function addtocartAction($itemId)
 	{
-
 		$itemId = htmlspecialchars($itemId);
 		$itemId = intval($itemId);
 		
@@ -54,15 +49,14 @@ class CartController
 	 * Метод удаления товаров из корзины
 	 * 
 	 * @param string $itemId ID товара, который нужно удалить
-	 * 
-	 * @return json Массив об успехе операции
+	 * @return json 				 Массив об успехе операции
 	 */
 	public function removefromcartAction($itemId)
 	{
 
 		$itemId = htmlspecialchars($itemId);
 		$itemId = intval($itemId);
-		//$itemId = isset($_GET['id']) ? intval($_GET['id']) : null;
+
 		if(empty($itemId)) return true;
 
 		$resData = array();
@@ -90,7 +84,6 @@ class CartController
 
 	/**
 	 * Метод формирования страницы заказа
-	 *
 	 */
 	public function orderAction()
 	{
@@ -179,6 +172,7 @@ class CartController
 		if(!$cart){
 			$resData['success'] = 0;
 			$resData['message'] = 'Нет товаров для заказа';
+
 			echo json_encode($resData);
 			return true;
 		}
