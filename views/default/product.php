@@ -6,13 +6,10 @@
 					<div class="product__nameWrap">
 						<ul class="product__linkingWrap">
 							<li class="product__linkingItem">
-								<a href="#" class="product__linkingLink">lorem</a><span class="product__linkingAngle">&gt;</span>
+								<a href="/<?=$rsParentCategory['symlink']?>/" class="product__linkingLink"><?=$rsParentCategory['name'];?></a><span class="product__linkingAngle">&gt;</span>
 							</li>
 							<li class="product__linkingItem">
-								<a href="#" class="product__linkingLink">lorem</a><span class="product__linkingAngle">&gt;</span>
-							</li>
-							<li class="product__linkingItem">
-								<a href="#" class="product__linkingLink">lorem</a><span class="product__linkingAngle">&gt;</span>
+								<a href="/<?=$rsParentCategory['symlink']?>/filter/<?=$symlink;?>" class="product__linkingLink"><?=ucfirst($symlink);?></a><span class="product__linkingAngle"></span>
 							</li>
 						</ul>
 						<h1 class="product__title"><?=$rsProduct['name']?></h1>

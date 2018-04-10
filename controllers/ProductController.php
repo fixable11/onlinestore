@@ -16,7 +16,10 @@ class ProductController
 		if($itemId == null) exit();
 
 		$rsProduct = Products::getProductById($itemId);
-		
+		$rsCategory = Categories::getCatById($rsProduct['category_id']);
+		$symlink = $rsCategory['symlink'];
+		$rsParentCategory = Categories::getCatById($rsCategory['parent_id']);
+
 		$itemInCart = 0;
 		if(in_array($itemId, $_SESSION['products'])){
 			$itemInCart = 1;
@@ -36,7 +39,9 @@ class ProductController
 
 		echo loadTemplate('product', [
 			'rsProduct' => $rsProduct,
-			'itemInCart' => $itemInCart
+			'itemInCart' => $itemInCart,
+			'symlink' => $symlink,
+			'rsParentCategory' => $rsParentCategory
 		]);
 
 		echo loadTemplate('footer', [
