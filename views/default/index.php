@@ -248,7 +248,7 @@
 										<div class="productCart">
 											<div class="productCartWrap">
 												<a href="/product/<?=$item['id']?>/" class="productCart__imgWrap">
-													<img src="/web/img/products/<?=$item['image']?>" alt="cart_img" class="productCart__img" width="200">
+													<img src="/web/img/products/<?=$item['image']?>" alt="cart_img" class="productCart__img">
 												</a>
 												<h3 class="productCart__title"><?=$item['name']?></h3>
 												<div class="productCart__color">black</div>

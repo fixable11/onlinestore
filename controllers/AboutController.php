@@ -13,8 +13,6 @@ class AboutController
 	public function deliveryAction()
 	{
 	
-		$cartCntItems = count($_SESSION['cntItems']);
-
 		$pageTitle = 'Доставка и оплата';
 
 		echo loadTemplate('header', [

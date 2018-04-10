@@ -2193,15 +2193,18 @@ body textarea:focus:required:invalid {
 body input:focus:required:invalid, body textarea:focus:required:invalid {
   color: #000; }
 
+html {
+  height: auto; }
+
 html, body {
   min-height: 100%;
   width: 100%;
   font-size: 16px;
   margin: 0;
-  padding: 0;
-  height: 100%; }
+  padding: 0; }
 
 body {
+  height: 100%;
   min-width: 320px;
   position: relative;
   line-height: 1.65;
@@ -2512,6 +2515,12 @@ h1, h2, h3, h4, h5, h6, p {
       border: 2px solid #babac0;
       border-left: none; }
   .searchBox__btnIcon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
     width: 16px;
     height: 16px;
     fill: #343e5c; }
@@ -3494,8 +3503,14 @@ h1, h2, h3, h4, h5, h6, p {
     -webkit-box-align: center;
     -webkit-align-items: center;
         -ms-flex-align: center;
-            align-items: center; }
+            align-items: center;
+    width: 100%; }
   .productCart__img {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 auto;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+    object-fit: scale-down;
     display: inline-block;
     width: auto;
     height: auto;
@@ -3855,12 +3870,14 @@ h1, h2, h3, h4, h5, h6, p {
     border-right: 2px solid #f0f2f7;
     -webkit-border-radius: 5px 0 0 5px;
             border-radius: 5px 0 0 5px;
-    left: 0; }
+    left: 0;
+    top: 0; }
     .paginationBox__leftArrow:hover {
       -webkit-box-shadow: -2px 0 10px #b9bed1;
               box-shadow: -2px 0 10px #b9bed1; }
   .paginationBox__rightArrow {
     right: 0;
+    top: 0;
     border-left: 2px solid #f0f2f7;
     -webkit-border-radius: 0 5px 5px 0;
             border-radius: 0 5px 5px 0; }
@@ -3900,9 +3917,11 @@ h1, h2, h3, h4, h5, h6, p {
     display: flex; }
     .paginationBox__item:first-child {
       position: absolute;
+      top: 0;
       left: 0; }
     .paginationBox__item:last-child {
       position: absolute;
+      top: 0;
       right: 0; }
   .paginationBox__link {
     font-family: 'Montserrat Bold', sans-serif;
@@ -4109,16 +4128,17 @@ h1, h2, h3, h4, h5, h6, p {
         fill: #484848; }
 
 .customersBoxWrap {
-  min-height: 430px;
+  margin-top: 60px;
+  min-height: 400px;
   width: 100%;
   overflow: hidden; }
 
 .customersBox {
+  overflow: hidden;
   padding-bottom: 20px; }
   .customersBox__title {
     text-align: center;
     color: #222328;
-    margin-top: 65px;
     font-size: 32px;
     font-family: 'Montserrat Black', sans-serif; }
   .customersBox__subtitle {

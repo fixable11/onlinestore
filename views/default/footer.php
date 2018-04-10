@@ -54,7 +54,7 @@
 										<use xlink:href="/web/img/vectorsprites/fa.svg#phone" />
 									</svg>
 								</div>
-								<div class="footerPhone__phone">(098)-886-03-54</div>
+								<div class="footerPhone__phone">+380 999 99 99</div>
 							</div>
 							<div class="footerSocIcons">
 								<ul class="footerSocIcons__wrap">
