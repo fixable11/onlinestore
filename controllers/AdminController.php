@@ -89,11 +89,6 @@ class AdminController
 		} else {
 			$resData['success'] = 0;
 			$resData['message'][] = 'Ошибка добавления категории';
-
-			if($symlink !== null){
-				$resData['message'][] = ' Символическая ссылка должна быть уникальной';
-			}
-
 		}
 
 		echo json_encode($resData);

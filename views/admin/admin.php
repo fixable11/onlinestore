@@ -36,7 +36,7 @@
 					</select></td>
 				</tr>
 				<tr class="newCategory__tr">
-					<td class="newCategory__td"><div class="newCategory__name">Символическая ссылка:</div></td>
+					<td class="newCategory__td"><div class="newCategory__name">Символическая ссылка*:</div></td>
 					<td class="newCategory__td"><input type="text" class="newCategory__input newCategory__inpSym" placeholder="symlink" name="symlink" value=""></td>
 				</tr>
 				<tr class="newCategory__tr">

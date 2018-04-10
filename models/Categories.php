@@ -109,7 +109,7 @@ class Categories
 		'catName' => $catName, 
 		'symlink' => $symlink]);
 
-		return $query->lastInsertId();
+		return $query;
 	}
 
 	/**

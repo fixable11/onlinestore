@@ -728,10 +728,6 @@ function login(dataObj){
         }
 
         $('.registerBlockMobile').html('<a href="/user/" class="loginBoxMobile loginBoxMobile-unlogin"><svg class="loginBoxMobile__user"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/web/img/vectorsprites/fa.svg#user"></use></svg></a>')
-        // if($('.loginBoxMobile-login').length != 0){
-        //   $('.loginBoxMobile').addClass('loginBoxMobile-unlogin').removeClass('loginBoxMobile-login');
-        //   $('.loginBoxMobile').attr('href', '/user/');
-        // }
 
       } else {
         var regBox = $('.popupLoginBox__message');

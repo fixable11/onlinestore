@@ -120,6 +120,7 @@ $(function() {
 				}
 			},
 			error: function (request, status, error) {
+				alert('Ошибка добавления категории!'); 
 				console.log(request.responseText);
 				console.log(status);
 				console.log(error);
