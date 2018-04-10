@@ -23,9 +23,8 @@ class IndexController
 			$rsProducts = Products::getAllProducts($page);
 		}
 		
-		$minPrice = Products::getMinPrice(0);
-		$maxPrice = Products::getMaxPrice(0);
-		
+		$minPrice = Products::getMinPrice();
+		$maxPrice = Products::getMaxPrice();
 	
 		$rsCategories = Categories::getAllMainCatsWithChildren();
 	

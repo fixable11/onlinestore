@@ -114,15 +114,21 @@ class Products
 	 * @param  integer id категории
 	 * @return integer колонка наибольшей цены
 	 */
-	public static function getMinPrice($catId)
-	{
-		$sql = 'SELECT products.price FROM products 
-		LEFT JOIN categories ON products.category_id = categories.id 
-		WHERE parent_id = :catId
-		AND products.status = "1"
-    ORDER BY products.price ASC';
-
-		$query = DB::db_query($sql, ['catId' => $catId]);
+	public static function getMinPrice($catId = null)
+	{	
+		if($catId){
+			$sql = 'SELECT products.price FROM products 
+			LEFT JOIN categories ON products.category_id = categories.id 
+			WHERE parent_id = :catId
+			AND products.status = "1"
+			ORDER BY products.price ASC';
+			$query = DB::db_query($sql, ['catId' => $catId]);
+		} else {
+			$sql = "SELECT `price`
+			FROM `products` 
+			WHERE `price` = (SELECT MIN(price) FROM `products`)";
+			$query = DB::db_query($sql);
+		}
 
 		return $query->fetchColumn();
 	}
@@ -133,15 +139,21 @@ class Products
 	 * @param  integer id категории
 	 * @return integer колонка наибольшей цены
 	 */
-	public static function getMaxPrice($catId)
-	{
-		$sql = 'SELECT products.price FROM products 
-		LEFT JOIN categories ON products.category_id = categories.id 
-		WHERE parent_id = :catId
-		AND products.status = "1"
-    ORDER BY products.price DESC';
-
-		$query = DB::db_query($sql, ['catId' => $catId]);
+	public static function getMaxPrice($catId = null)
+	{	
+		if($catId){
+			$sql = 'SELECT products.price FROM products 
+			LEFT JOIN categories ON products.category_id = categories.id 
+			WHERE parent_id = :catId
+			AND products.status = "1"
+			ORDER BY products.price DESC';
+			$query = DB::db_query($sql, ['catId' => $catId]);
+		} else {
+			$sql = "SELECT `price`
+			FROM `products` 
+			WHERE `price` = (SELECT MAX(price) FROM `products`)";
+			$query = DB::db_query($sql);
+		}
 
 		return $query->fetchColumn();
 	}

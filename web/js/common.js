@@ -451,17 +451,18 @@ $('.orders__pay').on('click', function(event) {
 $('.price__min').on('change', function(event) {
   var max = +$('.price__max').val();
   var min = +$(this).val();
+  console.log(min);
+  console.log(max);
   var dataMax = +$('.price__max').attr('data-max');
   var dataMin = +$(this).attr('data-min');
 
   if(min < dataMin){
     $(this).val(dataMin);
+  } else if(min > max){
+    $(this).val(dataMin);
   } else if(min < dataMax){
     $(this).val(min);
-  } else if(min > max){
-    $(this).val(max);
-  } 
-  
+  }
 
   if(!Number.isInteger(min)){
     $(this).val(dataMin);
