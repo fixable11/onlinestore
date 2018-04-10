@@ -146,6 +146,10 @@ class CartController
 			'pageTitle' => $pageTitle,
 		]);
 
+		echo loadTemplate('searchAndLogin', [
+			'pageTitle' => $pageTitle,
+		]);
+
 		echo loadTemplate('order', [
 			'rsProducts' => $rsProducts,
 			'arUser' => $arUser,

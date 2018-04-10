@@ -30,11 +30,15 @@ class ProductController
 			'pageTitle' => $pageTitle,
 		]);
 
+		echo loadTemplate('searchAndLogin', [
+			'pageTitle' => $pageTitle,
+		]);
+
 		echo loadTemplate('product', [
 			'rsProduct' => $rsProduct,
 			'itemInCart' => $itemInCart
 		]);
-		
+
 		echo loadTemplate('footer', [
 
 		]);

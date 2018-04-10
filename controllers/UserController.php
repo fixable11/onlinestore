@@ -151,6 +151,10 @@ class UserController
 			'pageTitle' => $pageTitle,
 		]);
 
+		echo loadTemplate('searchAndLogin', [
+			'pageTitle' => $pageTitle,
+		]);
+		
 		echo loadTemplate('user', [
 			'rsUserOrders' => $rsUserOrders
 		]);

@@ -64,7 +64,6 @@
 		</div>
 	</div>
 </section>
-
 <section class="search">
 	<div class="searchWrap">
 		<div class="container">
