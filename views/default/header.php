@@ -30,6 +30,7 @@
 </head>
 <body>
 	<div class="wrapper">
+		<div class="content">
 		<header class="mainHead">
 			<div class="mainHeadWrap">
 				<div class="container">

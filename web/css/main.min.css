@@ -2194,7 +2194,7 @@ body input:focus:required:invalid, body textarea:focus:required:invalid {
   color: #000; }
 
 html {
-  height: auto; }
+  height: 100%; }
 
 html, body {
   min-height: 100%;
@@ -2255,6 +2255,12 @@ h1, h2, h3, h4, h5, h6, p {
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column; }
+
+.content {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 0 auto;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto; }
 
 .mainHeadWrap {
   height: 90px;
@@ -4283,12 +4289,6 @@ h1, h2, h3, h4, h5, h6, p {
   height: 20px;
   fill: #fff; }
 
-.search {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1 0 auto;
-      -ms-flex: 1 0 auto;
-          flex: 1 0 auto; }
-
 .searchWrap {
   background-color: #e4e5e7; }
 
@@ -4315,11 +4315,7 @@ h1, h2, h3, h4, h5, h6, p {
 .aboutDeliveryWrap {
   padding-top: 30px;
   padding-bottom: 40px;
-  background-color: #e4e5e7;
-  -webkit-box-flex: 1;
-  -webkit-flex: 1 0 auto;
-      -ms-flex: 1 0 auto;
-          flex: 1 0 auto; }
+  background-color: #e4e5e7; }
 
 .aboutDelivery__title {
   font-size: 34px; }
@@ -4350,11 +4346,7 @@ h1, h2, h3, h4, h5, h6, p {
 .aboutGuaranteesWrap {
   padding-top: 30px;
   padding-bottom: 40px;
-  background-color: #e4e5e7;
-  -webkit-box-flex: 1;
-  -webkit-flex: 1 0 auto;
-      -ms-flex: 1 0 auto;
-          flex: 1 0 auto; }
+  background-color: #e4e5e7; }
 
 .aboutGuarantees__title {
   font-size: 34px; }
@@ -4389,11 +4381,7 @@ h1, h2, h3, h4, h5, h6, p {
 .aboutContacts {
   padding-top: 30px;
   padding-bottom: 40px;
-  background-color: #e4e5e7;
-  -webkit-box-flex: 1;
-  -webkit-flex: 1 0 auto;
-      -ms-flex: 1 0 auto;
-          flex: 1 0 auto; }
+  background-color: #e4e5e7; }
 
 .aboutContacts__title {
   font-size: 34px; }
@@ -4441,11 +4429,7 @@ h1, h2, h3, h4, h5, h6, p {
 .aboutUs {
   padding-top: 30px;
   padding-bottom: 40px;
-  background-color: #e4e5e7;
-  -webkit-box-flex: 1;
-  -webkit-flex: 1 0 auto;
-      -ms-flex: 1 0 auto;
-          flex: 1 0 auto; }
+  background-color: #e4e5e7; }
 
 .aboutUs__title {
   font-size: 34px; }
@@ -5471,83 +5455,88 @@ h1, h2, h3, h4, h5, h6, p {
 .ordersWrap {
   padding-bottom: 20px; }
 
-.orders {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1 0 auto;
-      -ms-flex: 1 0 auto;
-          flex: 1 0 auto; }
-  .orders__products {
-    margin-top: 20px;
-    border: 1px solid #00e2aa;
-    -webkit-border-radius: 4px 4px 0 0;
-            border-radius: 4px 4px 0 0; }
-  .orders__productsTitleWrap {
-    height: 40px;
-    width: 100%;
-    background-color: #00e2aa;
-    -webkit-border-radius: 4px 4px 0 0;
-            border-radius: 4px 4px 0 0; }
-  .orders__productsTitle {
-    line-height: 40px;
-    padding-left: 15px;
-    font-family: 'Montserrat Regular', sans-serif; }
-  .orders__totalBlock {
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    display: -o-flex;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    margin: 15px; }
-  .orders__userTitle {
-    font-size: 16px; }
-  .orders__register, .orders__login {
-    color: #636262;
-    text-decoration: underline; }
-  .orders__totalRight {
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    display: -o-flex;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: end;
-    -webkit-align-items: flex-end;
-        -ms-flex-align: end;
-            align-items: flex-end; }
-  .orders__total {
-    font-family: 'Montserrat Regular', sans-serif;
-    display: block; }
-  .orders__autho {
-    display: inline-block; }
-  .orders__totalStr {
-    font-family: 'Montserrat Bold', sans-serif;
-    font-size: 20px;
-    padding-left: 5px; }
-  .orders__pay {
-    display: block;
-    cursor: pointer;
-    float: right;
-    height: 35px;
-    border: none;
-    margin-top: 10px;
-    background-color: #00e2aa;
-    width: 140px;
-    -webkit-transition: background-color .3s;
-    transition: background-color .3s; }
-    .orders__pay:hover, .orders__pay:active {
-      background-color: #00ce9b; }
+.orders__products {
+  margin-top: 20px;
+  border: 1px solid #00e2aa;
+  -webkit-border-radius: 4px 4px 0 0;
+          border-radius: 4px 4px 0 0; }
+
+.orders__productsTitleWrap {
+  height: 40px;
+  width: 100%;
+  background-color: #00e2aa;
+  -webkit-border-radius: 4px 4px 0 0;
+          border-radius: 4px 4px 0 0; }
+
+.orders__productsTitle {
+  line-height: 40px;
+  padding-left: 15px;
+  font-family: 'Montserrat Regular', sans-serif; }
+
+.orders__totalBlock {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 15px; }
+
+.orders__userTitle {
+  font-size: 16px; }
+
+.orders__register, .orders__login {
+  color: #636262;
+  text-decoration: underline; }
+
+.orders__totalRight {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+      -ms-flex-align: end;
+          align-items: flex-end; }
+
+.orders__total {
+  font-family: 'Montserrat Regular', sans-serif;
+  display: block; }
+
+.orders__autho {
+  display: inline-block; }
+
+.orders__totalStr {
+  font-family: 'Montserrat Bold', sans-serif;
+  font-size: 20px;
+  padding-left: 5px; }
+
+.orders__pay {
+  display: block;
+  cursor: pointer;
+  float: right;
+  height: 35px;
+  border: none;
+  margin-top: 10px;
+  background-color: #00e2aa;
+  width: 140px;
+  -webkit-transition: background-color .3s;
+  transition: background-color .3s; }
+  .orders__pay:hover, .orders__pay:active {
+    background-color: #00ce9b; }
 
 .infoTable {
   margin-top: 10px;
