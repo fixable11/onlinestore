@@ -53,7 +53,7 @@
 								<td class="adminOrders__td"><?=$item['comment']?></td>
 								<td class="adminOrders__td"><?=$item['date_modification']?></td>
 							</tr>
-							<tr class="adminOrders__td adminOrders__td-none" data-id="<?=$item['id']?>">
+							<tr class="adminOrders__tr adminOrders__tr-subtrwrap adminOrders__tr-none" data-id="<?=$item['id']?>">
 								<td colspan="8">
 									<? if($item['children']): ?>
 										<table class="adminOrders__table adminOrders__table-subtable">
@@ -64,7 +64,8 @@
 												<td class="adminOrders__td adminOrders__td-subtd adminOrders__td-f">Цена</td>
 												<td class="adminOrders__td adminOrders__td-subright adminOrders__td-f">Количество</td>
 											</tr>
-											<? foreach($item['children'] as $itemChild): static $c = 0; ?>
+											<? $c = 1; ?>
+											<? foreach($item['children'] as $itemChild): ?>
 												<tr class="adminOrders__tr adminOrders__tr-subtr">
 													<td class="adminOrders__td adminOrders__td-subleft"><?=$c++?></td>
 													<td class="adminOrders__td adminOrders__td-subtd"><?=$itemChild['id']?></td>

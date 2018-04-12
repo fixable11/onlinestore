@@ -6,6 +6,7 @@
 		width: 100%
 		overflow: auto
 	&__table
+		width: 100%
 		border-collapse: collapse
 		border: 1px solid #ededed
 		margin-top: 20px
@@ -29,7 +30,6 @@
 		font-size: 14px
 		text-indent: 5px
 	&__textarea
-
 		width: 180px
 		height: 80px
 		resize: none
@@ -68,3 +68,56 @@
 
 .userOrderBox
 	height: 100%
+	&__title
+		margin-top: 20px
+		padding-left: 15px
+	&__tableWrap
+		width: 100%
+		overflow: auto
+		margin-top: 30px
+		padding-bottom: 30px
+	&__table
+		border-collapse: collapse
+		border: 1px solid #ededed
+		width: 100%
+		&-subtable
+			border: none
+	&__tr
+		width: 100%
+		&-none
+			display: none
+	&__td
+		//min-width: 240px
+		padding: 0 15px
+		min-height: 40px
+		vertical-align: middle
+		border: 1px solid #ededed
+		&-subtd
+			border-bottom: none
+			text-align: center
+		&-subleft
+			border-left: none
+			border-bottom: none
+			text-align: center
+		&-subright
+			border-right: none
+			border-bottom: none
+			text-align: center
+		&-f
+			border-top: none
+	&__showBtn
+		font-size: 13px
+		margin-top: 10px
+		padding: 0px 15px
+		min-width: 120px
+		min-height: 40px
+		border: none
+		outline-color: #343e5c
+		font-family: 'Montserrat Regular', sans-serif
+		background-color: #00e2aa
+		cursor: pointer
+		margin-bottom: 10px
+		-webkit-transition: background-color .3s
+		transition: background-color .3s
+		&:hover
+			background-color: #00ce9b

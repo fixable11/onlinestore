@@ -280,8 +280,7 @@ $(function() {
 	}
 
 	function showProducts(id){
-		
-		$('.adminOrders__td[data-id=' + id + ']').fadeToggle();
+		$('.adminOrders__tr[data-id=' + id + ']').fadeToggle();
 	}
 
 

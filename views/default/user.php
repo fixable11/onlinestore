@@ -47,57 +47,59 @@ endif; ?>
 <section class="userOrderBox">
 	<div class="userOrderBoxWrap">
 		<div class="container">
-
 			<h2 class="userOrderBox__title">Заказы:</h2>
-			<? if (!$rsUserOrders): ?>
-				Нет заказов
+			<? if (!isset($rsUserOrders)): ?>
+				<h3 class="userOrderBox__subtitle">Нет заказов</h3>
 			<? else: ?>
-				<table>
-					<tr>
-						<th>№</th>
-						<th>Действие</th>
-						<th>Действие</th>
-						<th>ID заказа</th>
-						<th>Дата создания</th>
-						<th>Дата оплаты</th>
-						<th>Дополнительная информация</th>
-					</tr>
-					<? foreach ($rsUserOrders as $item): static $i = 0;?>
-						<tr>
-							<td><?=$i++?></td>
-							<td><a href="#" id="showProducts" data-id="<?=$item['id']?>">Показать товар заказа</a></td>
-							<td><?=$item['id']?></td>
-							<td><?=$item['status']?></td>
-							<td><?=$item['date_created']?></td>
-							<td><?=$item['date_payment']?></td>
-							<td><?=$item['comment']?></td>
+				<div class="userOrderBox__tableWrap">
+					<table class="userOrderBox__table">
+						<tr class="userOrderBox__td">
+							<td class="userOrderBox__td">№</td>
+							<td class="userOrderBox__td">Действие</td>
+							<td class="userOrderBox__td">ID заказа</td>
+							<td class="userOrderBox__td">Статус заказа</td>
+							<td class="userOrderBox__td">Дата создания</td>
+							<td class="userOrderBox__td">Дата оплаты</td>
+							<td class="userOrderBox__td">Дополнительная информация</td>
 						</tr>
-						<tr class="hideme" id="purchasesForOrderId_<?=$item['id']?>">
-							<td colspan='7'>
-								<? if($item['children']): ?>
-									<table>
-										<tr>
-											<th>№</th>
-											<th>ID</th>
-											<th>Название</th>
-											<th>Цена</th>
-											<th>Количество</th>
-										</tr>
-										<? foreach($item['children'] as $itemChild): static $i = 0; ?>
-											<tr>
-												<td><?=$i++?></td>
-												<td><?=$itemChild['id']?></td>
-												<td><a href="/product/<?=$itemChild['id']?>"><?=$itemChild['name']?></a></td>
-												<td><?=$itemChild['price']?></td>
-												<td><?=$itemChild['amount']?></td>
+						<? foreach ($rsUserOrders as $item): static $i = 0;?>
+							<tr class="userOrderBox__td">
+								<td class="userOrderBox__td"><?=$i++?></td>
+								<td class="userOrderBox__td"><button class="userOrderBox__showBtn" data-id="<?=$item['id']?>">Показать товар заказа</button></td>
+								<td class="userOrderBox__td"><?=$item['id']?></td>
+								<td class="userOrderBox__td"><?=$item['status']?></td>
+								<td class="userOrderBox__td"><?=$item['date_created']?></td>
+								<td class="userOrderBox__td"><?=$item['date_payment']?></td>
+								<td class="userOrderBox__td"><?=$item['comment']?></td>
+							</tr>
+							<tr class="userOrderBox__tr userOrderBox__tr-none" data-id="<?=$item['id']?>">
+								<td colspan='7'>
+									<? if($item['children']): ?>
+										<table class="userOrderBox__table userOrderBox__table-subtable">
+											<tr class="userOrderBox__tr">
+												<td class="userOrderBox__td userOrderBox__td-subleft userOrderBox__td-f">№</td>
+												<td class="userOrderBox__td userOrderBox__td-subtd userOrderBox__td-f">ID</td>
+												<td class="userOrderBox__td userOrderBox__td-subtd userOrderBox__td-f">Название</td>
+												<td class="userOrderBox__td userOrderBox__td-subtd userOrderBox__td-f">Цена</td>
+												<td class="userOrderBox__td  userOrderBox__td-subright userOrderBox__td-f">Количество</td>
 											</tr>
-										<? endforeach; ?>
-									</table>
-								<? endif; ?>
-							</td>
-						</tr>
-					<? endforeach; ?>
-				</table>
+											<? $c = 1; ?>
+											<? foreach($item['children'] as $itemChild):  ?>
+												<tr class="userOrderBox__tr">
+													<td class="userOrderBox__td userOrderBox__td-subleft"><?=$c++;?></td>
+													<td class="userOrderBox__td userOrderBox__td-subtd"><?=$itemChild['id']?></td>
+													<td class="userOrderBox__td userOrderBox__td-subtd"><a href="/product/<?=$itemChild['id']?>"><?=$itemChild['name']?></a></td>
+													<td class="userOrderBox__td userOrderBox__td-subtd"><?=$itemChild['price']?></td>
+													<td class="userOrderBox__td userOrderBox__td-subright"><?=$itemChild['amount']?></td>
+												</tr>
+											<? endforeach; ?>
+										</table>
+									<? endif; ?>
+								</td>
+							</tr>
+						<? endforeach; ?>
+					</table>
+				</div>
 			<? endif; ?>
 		</div>
 	</div>

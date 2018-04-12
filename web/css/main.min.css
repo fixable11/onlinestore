@@ -5267,6 +5267,10 @@ h1, h2, h3, h4, h5, h6, p {
     margin-bottom: 60px; }
     .adminOrders__table-subtable {
       margin: 0; }
+  .adminOrders__tr-none {
+    display: none; }
+  .adminOrders__tr-subtrwrap {
+    border: 1px solid #a9a5a5; }
   .adminOrders__td {
     padding-left: 15px;
     padding-right: 15px;
@@ -5288,8 +5292,6 @@ h1, h2, h3, h4, h5, h6, p {
       text-align: center; }
     .adminOrders__td-center {
       text-align: center; }
-    .adminOrders__td-none {
-      display: none; }
   .adminOrders__input {
     height: 25px;
     width: 170px;
@@ -5427,6 +5429,7 @@ h1, h2, h3, h4, h5, h6, p {
   overflow: auto; }
 
 .userBox__table {
+  width: 100%;
   border-collapse: collapse;
   border: 1px solid #ededed;
   margin-top: 20px; }
@@ -5499,6 +5502,58 @@ h1, h2, h3, h4, h5, h6, p {
 
 .userOrderBox {
   height: 100%; }
+  .userOrderBox__title {
+    margin-top: 20px;
+    padding-left: 15px; }
+  .userOrderBox__tableWrap {
+    width: 100%;
+    overflow: auto;
+    margin-top: 30px;
+    padding-bottom: 30px; }
+  .userOrderBox__table {
+    border-collapse: collapse;
+    border: 1px solid #ededed;
+    width: 100%; }
+    .userOrderBox__table-subtable {
+      border: none; }
+  .userOrderBox__tr {
+    width: 100%; }
+    .userOrderBox__tr-none {
+      display: none; }
+  .userOrderBox__td {
+    padding: 0 15px;
+    min-height: 40px;
+    vertical-align: middle;
+    border: 1px solid #ededed; }
+    .userOrderBox__td-subtd {
+      border-bottom: none;
+      text-align: center; }
+    .userOrderBox__td-subleft {
+      border-left: none;
+      border-bottom: none;
+      text-align: center; }
+    .userOrderBox__td-subright {
+      border-right: none;
+      border-bottom: none;
+      text-align: center; }
+    .userOrderBox__td-f {
+      border-top: none; }
+  .userOrderBox__showBtn {
+    font-size: 13px;
+    margin-top: 10px;
+    padding: 0px 15px;
+    min-width: 120px;
+    min-height: 40px;
+    border: none;
+    outline-color: #343e5c;
+    font-family: 'Montserrat Regular', sans-serif;
+    background-color: #00e2aa;
+    cursor: pointer;
+    margin-bottom: 10px;
+    -webkit-transition: background-color .3s;
+    transition: background-color .3s; }
+    .userOrderBox__showBtn:hover {
+      background-color: #00ce9b; }
 
 .ordersWrap {
   padding-bottom: 20px; }

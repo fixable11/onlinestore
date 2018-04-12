@@ -450,8 +450,11 @@ $('.userBox__save').on('click', function(event) {
 });
 
 $('.orders__pay').on('click', function(event) {
-  
   saveOrder();
+});
+
+$('.userOrderBox__showBtn').on('click', function(event) {
+    showProducts($(this).attr('data-id'));
 });
 
 
@@ -840,6 +843,8 @@ function logout() {
 
   }
 
+//AJAX QUERIES END
+
 $('.popupBasketCart__inner').on('click','.popupBasketCart__itemAmountMore', function(event) {
     event.preventDefault();
     event.stopPropagation();
@@ -880,7 +885,9 @@ function conversationPrice(itemId){
   }
 }
 
-//AJAX QUERIES END
+function showProducts(id){
+  $('.userOrderBox__tr[data-id=' + id + ']').fadeToggle();
+}
 
 });
 
