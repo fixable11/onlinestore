@@ -5924,6 +5924,20 @@ h1, h2, h3, h4, h5, h6, p {
     line-height: 20px;
     color: #fff; }
 
+.error404 {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%); }
+  .error404__title {
+    text-align: center;
+    font-size: 60px; }
+  .error404__subtitle {
+    white-space: nowrap;
+    text-align: center; }
+
 /*==========  Desktop First  ==========*/
 /* Large Devices, Wide Screens */
 /* Medium Devices, Desktops */

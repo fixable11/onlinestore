@@ -2,24 +2,24 @@
 
 return array(
     
-    'product/([0-9]+)' => 'product/index/$1', // actionView в ProductController
-    
-    'catalog' => 'catalog/index', // actionIndex в CatalogController
-    //'category/([0-9]+)' => 'catalog/category/$1',  // actionCategory в CatalogController
+    'product/([0-9]+)/?$' => 'product/index/$1', // actionView в ProductController   
+    'catalog' => 'catalog/index',
+
     'search/\?query=([a-zA-Z0-9-+а-яёА-ЯЁ ]*)?(&?[a-z]*=?[a-zA-Zа-яёА-ЯЁ0-9-+ ]*)*/?$' => 'search/index',
     'search/?$' => 'search/index',
+
     'cart/addtocart/([0-9]+)' => 'cart/addtocart/$1',
     'cart/removefromcart/([0-9]+)' => 'cart/removefromcart/$1',
     'cart/order' => 'cart/order',
     'cart/saveorder' => 'cart/saveorder',
     'cart' => 'cart/index',
-    
 
     'user/register' => 'user/register',
     'user/login' => 'user/login',
     'user/update' => 'user/update',
     'user/logout' => 'user/logout',
     'user' => 'user/index',
+
     'admin/category' => 'admin/category',
     'admin/addnewcat' => 'admin/addnewcat',
     'admin/deletecat' => 'admin/deletecat',
@@ -32,32 +32,23 @@ return array(
     'admin/setorderstatus' => 'admin/setorderstatus',
     'admin/setorderdatepayment' => 'admin/setorderdatepayment',
     'admin' => 'admin/index',
+
     'about/delivery' => 'about/delivery',
     'about/guarantees' => 'about/guarantees',
     'about/contacts' => 'about/contacts',
     'about/us' => 'about/us',
 
-    //'phones/filter/([a-z]+)' => 'category/filter/1/1/$1',
-    'phones/price=([0-9]+-[0-9]+)/filter/([a-z]+)' => 'category/filter/$1/1/$2',
-    'phones/filter/([a-z]+)' => 'category/filter//1/$1',
-
-
-    'phones/price=([0-9]+-[0-9]+)/p-([1-9][0-9]*)' => 'category/index/$1/1/$2',
-    'phones/p-([1-9][0-9]*)' => 'category/index//1/$1',
-    'phones/price=([0-9]+-[0-9]+)' => 'category/index/$1/1',
-    'phones' => 'category/index//1',
+    'phones/price=([0-9]+-[0-9]+)/filter((/[a-z]+)(/[a-z]+)*(/p-([1-9][0-9]*))?)/?$' => 'category/filter/$1/1/$2',
+    'phones/filter((/[a-z]+)(/[a-z]+)*(/p-([1-9][0-9]*))?)/?$' => 'category/filter//1/$1',
+    'phones/price=([0-9]+-[0-9]+)/p-([1-9][0-9]*)/?$' => 'category/index/$1/1/$2',
+    'phones/p-([1-9][0-9]*)/?$' => 'category/index//1/$1',
+    'phones/price=([0-9]+-[0-9]+)/?$' => 'category/index/$1/1',
+    'phones/?$' => 'category/index//1',
     
-    //'phones' => 'category/index/1/1',
+    'category' => 'category/index/0', 
+    'price=([0-9]+-[0-9]+)/p-([1-9][0-9]*)/?$' => 'index/index/$1/$2',
+    'p-([1-9][0-9]*)/?$' => 'index/index//$1',
+    'price=([0-9]+-[0-9]+)/?$' => 'index/index/$1',
     
-
-    //'category/([0-9]+)/page/([0-9]+)' => 'category/index/$1/$2',
-    //'category/([0-9]+)' => 'category/index/$1',
-    'category' => 'category/index/0',
-    //'category/([0-9]+)/page-([0-9]+)' => 'catalog/category/$1/$2', // actionCategory в CatalogController   
-    'price=([0-9]+-[0-9]+)/p-([1-9][0-9]*)' => 'index/index/$1/$2',
-    'p-([1-9][0-9]*)' => 'index/index//$1',
-    'price=([0-9]+-[0-9]+)' => 'index/index/$1',
-    
-    '' => 'index/index', // actionIndex в SiteController
-    'error1' => ''
+    '' => 'index/index'
 );

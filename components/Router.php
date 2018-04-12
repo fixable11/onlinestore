@@ -43,11 +43,6 @@ class Router
         // Проверка на существование записи в файле routes.php
         foreach ($this->routes as $uriPattern => $path) {
 
-
-            if($uriPattern == 'error') {
-                header("Location: /err404.php");
-            }
-            
             // Сравниваем $uriPattern и $uri
             if (preg_match("~$uriPattern~u", $uri)) {
 
@@ -76,10 +71,11 @@ class Router
 
                 $controllerObject = new $controllerName;
                 
-                
                 $result = call_user_func_array(array($controllerObject, $actionName), $parameters);
-                
-                
+                if($result == false){
+                    echo loadTemplate('err404');
+                }
+
                 if ($result != null) {
                     break;
                 }
