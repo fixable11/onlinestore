@@ -44,6 +44,13 @@ return array(
     'phones/p-([1-9][0-9]*)/?$' => 'category/index//1/$1',
     'phones/price=([0-9]+-[0-9]+)/?$' => 'category/index/$1/1',
     'phones/?$' => 'category/index//1',
+
+    'tablets/price=([0-9]+-[0-9]+)/filter((/[a-z]+)(/[a-z]+)*(/p-([1-9][0-9]*))?)/?$' => 'category/filter/$1/2/$2',
+    'tablets/filter((/[a-z]+)(/[a-z]+)*(/p-([1-9][0-9]*))?)/?$' => 'category/filter//2/$1',
+    'tablets/price=([0-9]+-[0-9]+)/p-([1-9][0-9]*)/?$' => 'category/index/$1/2/$2',
+    'tablets/p-([1-9][0-9]*)/?$' => 'category/index//2/$1',
+    'tablets/price=([0-9]+-[0-9]+)/?$' => 'category/index/$1/2',
+    'tablets/?$' => 'category/index//2',
     
     'category' => 'category/index/0', 
     'price=([0-9]+-[0-9]+)/p-([1-9][0-9]*)/?$' => 'index/index/$1/$2',

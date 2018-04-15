@@ -78,7 +78,7 @@ class CategoryController
 	 */
 	public function filterAction($price = null, $catId = 0, ...$symlinks)
 	{	
-		
+
 		$page = $symlinks[count($symlinks) - 1];
 
 		$page = substr($page, 2);
@@ -93,7 +93,7 @@ class CategoryController
 			$page = 1;
 		}
 		
-		$subcatsIds = Categories::getIdsBySymLinks($symlinks);
+		$subcatsIds = Categories::getIdsBySymLinks($catId, $symlinks);
 		
 		if($price){
 			$price = explode('-', $price);

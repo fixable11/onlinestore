@@ -4,7 +4,7 @@ class Products
 {
 	
 	//Лимит товаров на странице
-	const SHOW_BY_DEFAULT = 3;
+	const SHOW_BY_DEFAULT = 6;
 
 	/**
 	 * Получение продуктов согласно номеру страницы

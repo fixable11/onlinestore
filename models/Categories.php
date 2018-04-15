@@ -56,21 +56,22 @@ class Categories
 
 	/**
 	 * Получение id товаров по их символическим ссылкам
-	 * 
+	 *
+	 * @param  integer $catId  id категории
 	 * @param  array $symlinks массив символических ссылок
 	 * @return array           массив id'шников товаров
 	 */
-	public static function getIdsBySymLinks(...$symlinks)
+	public static function getIdsBySymLinks($catId, ...$symlinks)
 	{
 		$sql = "SELECT id
 		FROM `categories`
 		WHERE symlink IN ('";
 
 		$params = implode("', '" ,$symlinks[0]);
-		$params .= "')";
+		$params .= "') AND parent_id = :catId";
 		$sql .= $params;
 
-		$query = DB::db_query($sql);
+		$query = DB::db_query($sql, ['catId' => $catId]);
 
 		return $query->fetchAll(PDO::FETCH_ASSOC);
 	}
