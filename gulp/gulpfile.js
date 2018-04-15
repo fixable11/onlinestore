@@ -17,9 +17,9 @@ var gulp           = require('gulp'),
 
 gulp.task('common-js', function() {
 	return gulp.src([
-		'../web/js/common.js',
+		'../web/js/admin.js',
 		])
-	.pipe(concat('common.min.js'))
+	.pipe(concat('admin.min.js'))
 	.pipe(uglify())
 	.pipe(gulp.dest('../web/js'));
 });
@@ -29,6 +29,8 @@ gulp.task('scripts', ['common-js'], function() {
 		'../web/libs/jquery/jquery-3.3.1.min.js',
 		'../web/libs/owl.carousel/owl.carousel.min.js',
 		'../web/libs/mmenu/jquery.mmenu.all.js',
+		'../web/libs/svg4everybody/svg4everybody.min.js',
+		'../web/js/admin.min.js',
 		'../web/js/common.min.js', // Всегда в конце
 		])
 	.pipe(concat('scripts.min.js'))
@@ -53,7 +55,7 @@ gulp.task('sass', function() {
 	.pipe(sass().on("error", notify.onError()))
 	.pipe(rename({suffix: '.min', prefix : ''}))
 	.pipe(autoprefixer(['last 15 versions']))
-	//.pipe(cleanCSS())
+	.pipe(cleanCSS())
 	.pipe(gulp.dest('../web/css'))
 	.pipe(browserSync.reload({stream: true}));
 });

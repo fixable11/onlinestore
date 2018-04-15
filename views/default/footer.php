@@ -186,8 +186,17 @@
 			</div>
 		</div>
 	</div>
+	<link rel="stylesheet" href="/web/css/main.min.css">
 	<script src="/web/js/scripts.min.js"></script>
-	<script src="/web/js/admin.js"></script>
+	<script>svg4everybody();</script>
+	<script>
+		$(window).on('load', function () {
+			$preloader = $('.loaderArea'),
+			$loader = $preloader.find('.loader');
+			$loader.fadeOut();
+			$preloader.delay(350).fadeOut('slow');
+		});
+	</script>
 </div>
 </body>
 </html>
