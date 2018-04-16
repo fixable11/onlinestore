@@ -271,7 +271,24 @@ class Products
 
 		return $query->fetchAll(PDO::FETCH_ASSOC);
 	}
-		
+	
+	/**
+	 * Получение количества продуктов определенной категории по их id
+	 * 
+	 * @param  integer $catId id категории
+	 * @return integer        количество товаров определенной категории
+	 */
+	public static function getAmountByCategoryId($catId)
+	{
+		$sql = 'SELECT COUNT(*) AS amount 
+		FROM products 
+		WHERE category_id = :catId';
+
+		$query = DB::db_query($sql, ['catId' => $catId]);
+
+		return $query->fetchColumn();
+	}
+	
 	/**
 	 * Получение id'шников подкатегорий в зависимости от
 	 * id родительской категории
@@ -285,7 +302,7 @@ class Products
 		FROM `categories`
 		WHERE parent_id = :catId";
 
-		$query = DB::db_query($sql,['catId' => $catId]);
+		$query = DB::db_query($sql, ['catId' => $catId]);
 
 		return $query->fetchAll(PDO::FETCH_ASSOC);
 	}

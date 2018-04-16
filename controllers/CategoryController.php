@@ -30,7 +30,9 @@ class CategoryController
 		}
 		
 		$rsSubCategories = Products::getSubCatsByParentId($catId);
-
+		foreach ($rsSubCategories as &$item) {
+			$item['amount'] = Products::getAmountByCategoryId($item['id']);
+		}
 
 		$rsCategories = Categories::getAllMainCatsWithChildren();
 		
@@ -110,6 +112,10 @@ class CategoryController
 		}
 
 		$rsSubCategories = Products::getSubCatsByParentId($catId);
+		foreach ($rsSubCategories as &$item) {
+			$item['amount'] = Products::getAmountByCategoryId($item['id']);
+		}
+
 		$rsCategory = Categories::getCatById($catId);
 		$rsCategories = Categories::getAllMainCatsWithChildren();
 		

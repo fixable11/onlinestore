@@ -208,7 +208,7 @@
 											<span class="productsSet__availableChecked"></span>			
 										</label>
 										<span class="productsSet__availableText">In Storage</span>
-										<span class="productsSet__availableAmount">55</span>
+										<span class="productsSet__availableAmount">00</span>
 									</div>
 									<div class="productsSet__availableWrap">
 										<label class="productsSet__availableLabel">
@@ -216,7 +216,7 @@
 											<span class="productsSet__availableChecked"></span>				
 										</label>
 										<span class="productsSet__availableText">In Online-Shop</span>
-										<span class="productsSet__availableAmount">55</span>
+										<span class="productsSet__availableAmount">00</span>
 									</div>
 								</div>
 								<div class="productsSet__title">Brands</div>
@@ -232,7 +232,7 @@
 											<span class="productsSet__brandsText">
 												<? $name = explode(" ", $item['name']); echo $name[1];?>
 											</span>
-											<span class="productsSet__brandsAmount">55</span>
+											<span class="productsSet__brandsAmount"><?=$item['amount'];?></span>
 										</div>
 									<? endforeach; ?>
 
