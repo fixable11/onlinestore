@@ -19,7 +19,6 @@
 	<meta name="theme-color" content="#000">
 	<!-- Custom Browsers Color End -->
 	<style>.loaderArea{position:fixed;top:0;right:0;bottom:0;left:0;z-index:999999;display:block;background:#fff}.loader{position:absolute;top:50%;left:50%;width:36px;height:36px;margin:-18px 0 0 -18px;border-radius:50%;border:2px solid;border-top-color:rgba(34,34,34,1);border-bottom-color:rgba(0,0,0,.15);border-left-color:rgba(34,34,34,1);border-right-color:rgba(0,0,0,.15);-webkit-animation:page-loader-circle .8s linear infinite;animation:page-loader-circle .8s linear infinite}@keyframes page-loader-circle{from{-webkit-transform:rotate(0);transform:rotate(0)}to{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@-webkit-keyframes page-loader-circle{from{-webkit-transform:rotate(0);transform:rotate(0)}to{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}</style>
-	<link rel="stylesheet" href='/web/libs/mmenu/jquery.mmenu.all.css'>
 </head>
 <body>
 	<div class="wrapper">

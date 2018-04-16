@@ -188,6 +188,7 @@
 	</div>
 	<link rel="stylesheet" href="/web/css/main.min.css">
 	<script src="/web/js/scripts.min.js"></script>
+	<link rel="stylesheet" href='/web/libs/mmenu/jquery.mmenu.all.css'>
 	<script>svg4everybody();</script>
 	<script>
 		$(window).on('load', function () {
