@@ -17,9 +17,9 @@ var gulp           = require('gulp'),
 
 gulp.task('common-js', function() {
 	return gulp.src([
-		'../web/js/admin.js',
+		'../web/js/common.js',
 		])
-	.pipe(concat('admin.min.js'))
+	.pipe(concat('common.min.js'))
 	.pipe(uglify())
 	.pipe(gulp.dest('../web/js'));
 });

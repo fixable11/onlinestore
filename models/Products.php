@@ -109,12 +109,64 @@ class Products
 	}
 
 	/**
-	 * Получение наименьшей цены товара согласно его категории
+	 * Получение наименьшей цены товара согласно определенным категориям
 	 *
-	 * @param  integer id категории
-	 * @return integer колонка наибольшей цены
+	 * @param  array $catIds id'шники категорий
+	 * @return integer       колонка наибольшей цены
 	 */
-	public static function getMinPrice($catId = null)
+	public static function getMinPrice($catIds = null)
+	{	
+		if($catIds){
+			$catIds = implode(',', $catIds);
+			$sql = 'SELECT products.price FROM products 
+			LEFT JOIN categories ON products.category_id = categories.id 
+			WHERE categories.id IN ('.$catIds.')
+			AND products.status = "1"
+			ORDER BY products.price ASC';
+			$query = DB::db_query($sql);
+		} else {
+			$sql = "SELECT `price`
+			FROM `products` 
+			WHERE `price` = (SELECT MIN(price) FROM `products`)";
+			$query = DB::db_query($sql);
+		}
+
+		return $query->fetchColumn();
+	}
+	
+	/**
+	 * Получение наибольшей цены товара согласно определенным категориям
+	 *
+	 * @param  array $catIds id'шники категорий
+	 * @return integer       колонка наибольшей цены
+	 */
+	public static function getMaxPrice($catIds = null)
+	{	
+		if($catIds){
+			$catIds = implode(',', $catIds);
+			$sql = 'SELECT products.price FROM products 
+			LEFT JOIN categories ON products.category_id = categories.id 
+			WHERE categories.id IN ('.$catIds.')
+			AND products.status = "1"
+			ORDER BY products.price DESC';
+			$query = DB::db_query($sql);
+		} else {
+			$sql = "SELECT `price`
+			FROM `products` 
+			WHERE `price` = (SELECT MAX(price) FROM `products`)";
+			$query = DB::db_query($sql);
+		}
+
+		return $query->fetchColumn();
+	}
+
+	/**
+	 * Получение наименьшей цены товара согласно его родительской категории
+	 *
+	 * @param  integer $catId  id категории
+	 * @return integer         колонка наибольшей цены
+	 */
+	public static function getMinPriceByParentId($catId = null)
 	{	
 		if($catId){
 			$sql = 'SELECT products.price FROM products 
@@ -132,14 +184,14 @@ class Products
 
 		return $query->fetchColumn();
 	}
-	
+
 	/**
-	 * Получение наибольшей цены товара согласно его категории
+	 * Получение наибольшей цены товара согласно его родительской категории
 	 *
-	 * @param  integer id категории
-	 * @return integer колонка наибольшей цены
+	 * @param  integer $catIds id категории
+	 * @return integer         колонка наибольшей цены
 	 */
-	public static function getMaxPrice($catId = null)
+	public static function getMaxPriceByParentId($catId = null)
 	{	
 		if($catId){
 			$sql = 'SELECT products.price FROM products 

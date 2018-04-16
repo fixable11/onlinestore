@@ -17,8 +17,8 @@ class CategoryController
 	{	
 		$rsCategory = Categories::getCatById($catId);
 
-		$minPrice = Products::getMinPrice($catId);
-		$maxPrice = Products::getMaxPrice($catId);
+		$minPrice = Products::getMinPriceByParentId($catId);
+		$maxPrice = Products::getMaxPriceByParentId($catId);
 
 		if($price){
 			$price = explode('-', $price);
@@ -84,9 +84,6 @@ class CategoryController
 		$page = substr($page, 2);
 		$page = intval($page);
 
-		$minPrice = Products::getMinPrice($catId);
-		$maxPrice = Products::getMaxPrice($catId);
-
 		//Если в конце URI содержится p-*, то * станет номером страницы 
 		if(!$page){
 			//иначе номер страницы будет равен 1
@@ -94,7 +91,15 @@ class CategoryController
 		}
 		
 		$subcatsIds = Categories::getIdsBySymLinks($catId, $symlinks);
-		
+
+		$catIds = array();
+		foreach($subcatsIds as $item){
+			$catIds[] = $item['id'];
+		}
+
+		$minPrice = Products::getMinPrice($catIds);
+		$maxPrice = Products::getMaxPrice($catIds);
+
 		if($price){
 			$price = explode('-', $price);
 			$lowPrice = $price[0];
@@ -105,7 +110,7 @@ class CategoryController
 		}
 
 		$rsSubCategories = Products::getSubCatsByParentId($catId);
-
+		$rsCategory = Categories::getCatById($catId);
 		$rsCategories = Categories::getAllMainCatsWithChildren();
 		
 		if($price){
@@ -118,7 +123,7 @@ class CategoryController
 
 		$pagination = new Pagination($total, $page, Products::SHOW_BY_DEFAULT, 'p-');
 
-		$pageTitle = 'Товары категории ' . 'Телефоны';
+		$pageTitle = 'Товары категории ' . $rsCategory['name'];
 
 		echo loadTemplate('header', [
 			'pageTitle' => $pageTitle,

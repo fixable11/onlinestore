@@ -509,18 +509,37 @@ $('.price__ok').on('click', function(event) {
   max = parseInt(max);
   if(!isNaN(min) && !isNaN(max)){
     var location = window.location.href;
-    var reg = /price=[0-9]+-[0-9]+/;
+    var reg = /price=[0-9]+-[0-9]+\/(p-[0-9]+)?\/?$/;
     //var reg2 = /(https?):\/\/([a-z]+:?[0-9]*)\/([a-z]+)/;
-    var reg2 = /\/([a-z]+)\/filter/;
-    var str2 = '/$1/' + 'price=' + min + '-' + max + '/filter';
+    var reg2 = /\/([a-z]+)\/filter\/(([a-z]+\/?)+\/?)/;
+    var str2 = '/$1/' + 'price=' + min + '-' + max + '/filter/$2';
+    var reg3 = /\/([a-z]+)\/price=[0-9]+-[0-9]+\/filter\/(((([a-z]+\/?)+\/)(p-[0-9]+)\/?)|(([a-z]+\/?)+\/?))/;
+    var str3 = '/$1/' + 'price=' + min + '-' + max + '/filter/$4';
+    var str4 = '/$1/' + 'price=' + min + '-' + max + '/filter/$2';
     
     if(location.match(reg)){
-     window.location.href = location.replace(reg, 'price=' + min + '-' + max);
+     window.location.href = location.replace(reg, 'price=' + min + '-' + max + '/');
+
     } else {
       if(location.search(/filter/) != -1){
-        window.location.href = location.replace(reg2, str2);
+
+        if(location.match(reg2)){
+          window.location.href = location.replace(reg2, str2);
+        } else {
+          if(location.search(/p-[0-9]+/) != -1){
+            window.location.href = location.replace(reg3, str3);
+          } else {
+            window.location.href = location.replace(reg3, str4);
+          }       
+        }
+        
       } else {
-        window.location.href = location + 'price=' + min + '-' + max + '/';
+
+        if(location.search(/p-[0-9]+/) != -1){
+          window.location.href = location.replace(/p-[0-9]+\//, '') + 'price=' + min + '-' + max + '/';
+        } else {
+          window.location.href = location + 'price=' + min + '-' + max + '/';
+        }
       }
       
     }
