@@ -67,6 +67,14 @@
 														</li>
 														<li class="headerNav__item">
 															<a href="/tablets/" class="headerNav__link">Планшеты</a>
+															<ul class="headerNav__wrap">
+																<li class="headerNav__item">
+																	<a href="/tablets/filter/apple/" class="headerNav__link">Планшеты Apple</a>
+																</li>
+																<li class="headerNav__item">
+																	<a href="/tablets/filter/samsung/" class="headerNav__link">Планшеты Samsung</a>
+																</li>
+															</ul>
 														</li>
 													</ul>
 												</li>

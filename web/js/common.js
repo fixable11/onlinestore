@@ -566,7 +566,6 @@ function addToCart (itemId) {
         console.log(trigger);
         if(trigger.length == 0){
           $('.productCart__addWrap').each(function(index, el) {
-            console.log(123);
             if($(el).attr("data-id") == itemId){
               $(el).addClass('productCart__addWrap-active');
               $html = '<div class="popupBasketCart__item" data-id="' + data['id'] + '"><a href="/product/' + data['id'] + '/" class="popupBasketCart__itemImgWrap"><img src="/web/img/products/' + data['image'] + '" alt="cart_img" class="popupBasketCart__itemImg"></a><h4 class="popupBasketCart__itemName">' + data['name'] + '</h4><div class="popupBasketCart__itemPrice" data-id="' + data['id'] + '" data-price="' + data['price'] + '">' + data['price'] + ' грн</div><div class="popupBasketCart__itemAmountBox"><button class="popupBasketCart__itemAmountLess" data-id="' + data['id'] + '">-</button><div class="popupBasketCart__itemAmountWrap"><input type="text" maxlength="2" name="itemCnt_'+data['id']+'" class="popupBasketCart__itemAmount" value="1" data-id="' + data['id'] + '"> шт.</div><button class="popupBasketCart__itemAmountMore" data-id="' + data['id'] + '">+</button></div><div class="popupBasketCart__itemRealPrice" data-id="' + data['id'] + '">' + data['price'] + ' грн</div><button class="popupBasketCart__itemClose"><svg class="popupBasketCart__itemCloseImg"><use xlink:href="/web/img/vectorsprites/fa.svg#times" /></svg></button> </div>';
