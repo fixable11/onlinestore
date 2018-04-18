@@ -37,6 +37,10 @@ class AdminController
 	 */
 	public function indexAction()
 	{
+		if($_SESSION['user']['email'] != 'admin@admin.ru'){
+			redirect('/');
+		}
+
 		$pageTitle = 'Управление сайтом';
 
 		$rsCategories = Categories::getAllMainCategories();
@@ -131,6 +135,10 @@ class AdminController
 	 */
 	public function categoryAction()
 	{
+		if($_SESSION['user']['email'] != 'admin@admin.ru'){
+			redirect('/');
+		}
+
 		$rsCategories = Categories::getAllCategories();
 		$rsMainCategories = Categories::getAllMainCategories();
 
@@ -191,6 +199,10 @@ class AdminController
 	 */
 	public function productsAction()
 	{
+		if($_SESSION['user']['email'] != 'admin@admin.ru'){
+			redirect('/');
+		}
+
 		$rsCategories = Categories::getAllCategories();
 		$rsProducts = Products::getProducts();
 
@@ -331,6 +343,10 @@ class AdminController
 	 */
 	public function ordersAction()
 	{
+		if($_SESSION['user']['email'] != 'admin@admin.ru'){
+			redirect('/');
+		}
+		
 		$rsOrders = Orders::getOrders();
 
 		$pageTitle = 'Управление сайтом';

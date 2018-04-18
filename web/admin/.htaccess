@@ -1,4 +1,0 @@
-AuthType Basic
-AuthName admin
-AuthUserFile D:/wamp64/www/localshop/pwdaccess
-require valid-user
