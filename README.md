@@ -26,3 +26,4 @@ notify: true,
 '../web/libs/svg4everybody/svg4everybody.min.js',
 '../web/js/admin.min.js',
 ```
+4. Запускать с помощью команды **gulp** в директории с gulpfile.js
