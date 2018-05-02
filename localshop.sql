@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Май 02 2018 г., 11:23
+-- Время создания: Май 02 2018 г., 11:55
 -- Версия сервера: 5.7.14
 -- Версия PHP: 7.0.10
 
@@ -208,7 +208,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `email`, `pwd`, `name`, `phone`, `address`) VALUES
-(5, 'admin@admin.ru', '$5$rounds=5000$salt$n/1WPXP9Sru/vC/sZg54rErMYzXFULHOS48NvX4H2LC', 'admin admin', '+333-333-33', 'address');
+(5, 'admin@admin.ru', '$5$rounds=5000$salt$B6Hq87Z/CNEsCJTW4JselQQtV3ky1cVjGrbsODpBh.6', 'admin admin', '+333-333-33', 'address');
 
 --
 -- Индексы сохранённых таблиц
@@ -274,7 +274,7 @@ ALTER TABLE `purchase`
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

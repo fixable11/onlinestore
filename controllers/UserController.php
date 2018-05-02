@@ -57,7 +57,7 @@ class UserController
 
 		if(!$resData){
 
-			$pwdSHA = crypt($pwd1, 'salt');
+			$pwdSHA = crypt($pwd1, '$5$rounds=5000$salt$');
 			$userData = Users::registerNewUser($email, $pwdSHA, $name, $phone, $address);
 			$userData = $userData[0];
 
