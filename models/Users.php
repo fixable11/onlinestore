@@ -75,7 +75,7 @@ class Users
 	public static function loginUser($email, $pwd)
 	{
 		$email = htmlspecialchars($email);
-		$pwd = crypt($pwd, 'salt');
+		$pwd = crypt($pwd, '$5$rounds=5000$salt$');
 
 		$sql = "SELECT * FROM `users` 
 		WHERE (`email` = :email and `pwd` = :pwd)
@@ -125,7 +125,7 @@ class Users
 				return [false, 'Новый пароль не должен быть больше 15 символов'];
 			}
 
-			$newPwd = crypt($pwd1, 'salt');
+			$newPwd = crypt($pwd1, '$5$rounds=5000$salt$');
 
 		} else {
 
